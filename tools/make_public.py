@@ -100,8 +100,32 @@ def export_archive() -> None:
             print(f"{out}/{p.name}  {im.size}")
 
 
+# さよと氏が 2026-08-03 に X へ投稿した募集チラシ（表・裏）。
+# X の画像ビューアのスクショから、チラシの部分だけを切り出す（周りには閲覧者のアカウント表示が写る）。
+# 裏面の右下にある人物写真3枚は、主張の裏付けに要らないので黒塗りにする。
+FLYER_BOX = (487, 0, 954, 661)          # 1440px 幅の元画像でのチラシの範囲
+FLYER = {
+    "00a_2084031304883163524_photo1.jpg": ("flyer_20260803_front.jpg", []),
+    "00a_2084031304883163524_photo2.jpg": ("flyer_20260803_back.jpg", [(718, 526, 952, 624)]),
+}
+
+
+def export_flyer() -> None:
+    dst = ROOT / "site" / "evidence" / "sns" / "x_1123sayoto"
+    dst.mkdir(parents=True, exist_ok=True)
+    for name, (out_name, boxes) in FLYER.items():
+        im = Image.open(ARCHIVE / "x_1123sayoto" / name).convert("RGB")
+        scale = im.size[0] / 1440
+        for (x0, y0, x1, y1) in boxes:
+            im.paste((0, 0, 0), (int(x0 * scale), int(y0 * scale), int(x1 * scale), int(y1 * scale)))
+        im = im.crop(tuple(int(v * scale) for v in FLYER_BOX))
+        im.save(dst / out_name, "JPEG", quality=92)   # メタデータは書き出さない
+        print(f"sns/x_1123sayoto/{out_name}  {im.size}")
+
+
 def main() -> None:
     export_archive()
+    export_flyer()
     DST.mkdir(parents=True, exist_ok=True)
     sources = {p.name: p for p in SRC.glob("*.jpg")}
     for prefix, out_name in PUBLIC.items():
