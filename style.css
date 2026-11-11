@@ -6,6 +6,7 @@
   --likely:#1d4f8a; --likely-bg:#e1ebf7;
   --dispute:#8a5a00; --dispute-bg:#fbefd2;
   --unver:#5a5a5a; --unver-bg:#ebebe8;
+  --ng:#a12a2a; --ng-bg:#fbe5e3;
   --warn-bg:#fff4e5; --warn-line:#e8b46a;
 }
 *{box-sizing:border-box}
@@ -34,6 +35,11 @@ p{margin:10px 0}
 .b.likely{color:var(--likely);background:var(--likely-bg)}
 .b.dispute{color:var(--dispute);background:var(--dispute-bg)}
 .b.unver{color:var(--unver);background:var(--unver-bg)}
+.b.ng{color:var(--ng);background:var(--ng-bg)}
+.verdict ol{margin:6px 0;padding-left:1.4em}
+.verdict li{margin:6px 0}
+#claims td:first-child{min-width:15em}
+#claims td:last-child{min-width:8.5em}
 ol.key{padding-left:1.4em}
 ol.key li{margin:10px 0}
 .tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
