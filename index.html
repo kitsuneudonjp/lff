@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <header class="top">
@@ -20,6 +20,8 @@
 
 <div class="wrap">
 <nav class="toc" aria-label="目次">
+  <details open>
+  <summary>目次</summary>
   <ol>
     <li><a href="#about">このページについて</a></li>
     <li><a href="#summary">現時点の結論</a></li>
@@ -35,6 +37,7 @@
     <li><a href="#evidence">証拠と改ざん検出</a></li>
     <li><a href="#contribute">資料提供のお願い</a></li>
   </ol>
+  </details>
 </nav>
 
 <main>
@@ -293,13 +296,6 @@
 </footer>
 </main>
 </div>
-<script>
-// 証拠画像はクリックで原寸を別タブに開く
-document.querySelectorAll('figure img').forEach(function (img) {
-  img.style.cursor = 'zoom-in';
-  img.title = 'クリックで原寸表示';
-  img.addEventListener('click', function () { window.open(img.src, '_blank', 'noopener'); });
-});
-</script>
+<script src="app.js?v=2" defer></script>
 </body>
 </html>
