@@ -140,6 +140,132 @@
     Object.keys(tocLinks).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
   }
 
+  /* ---------- 表：スマホでカード表示にするための印を付ける（見た目は style.css） ---------- */
+  document.querySelectorAll('.tbl > table').forEach(function (table) {
+    var rows = table.rows;
+    if (!rows.length || !rows[0].querySelector('th')) return;
+    var labels = Array.prototype.map.call(rows[0].cells, function (c) { return c.textContent.trim(); });
+    rows[0].classList.add('head');
+    for (var r = 1; r < rows.length; r++) {
+      Array.prototype.forEach.call(rows[r].cells, function (td, i) {
+        var label = labels[i] || '';
+        td.setAttribute('data-label', label);
+        if (i === 0) td.classList.add('c-title');
+        else if (/判定|確かさ/.test(label)) td.classList.add('c-verdict');
+        else if (/^(出典|根拠)$/.test(label)) {
+          // 出典・根拠は、スマホではボタンを押したときだけ見せる
+          td.classList.add('c-src');
+          var body = document.createElement('div'); body.className = 'src-body';
+          while (td.firstChild) body.appendChild(td.firstChild);
+          var tg = document.createElement('button');
+          tg.type = 'button'; tg.className = 'src-toggle'; tg.textContent = label;
+          tg.setAttribute('aria-expanded', 'false');
+          tg.addEventListener('click', function () {
+            tg.setAttribute('aria-expanded', td.classList.toggle('open') ? 'true' : 'false');
+          });
+          td.appendChild(tg); td.appendChild(body);
+        }
+      });
+    }
+    table.classList.add('cards');
+    table.parentElement.classList.add('cards-wrap');
+  });
+
+  /* ---------- 長い部分を折りたたむ ---------- */
+  function chip(text) { var c = document.createElement('span'); c.className = 'n'; c.textContent = text; return c; }
+
+  // 結論：太字の1行だけ見せ、根拠は「くわしく」に入れる
+  document.querySelectorAll('ol.key > li').forEach(function (li) {
+    var lead = li.firstElementChild;
+    if (!lead || lead.tagName !== 'STRONG') return;
+    var rest = [], n = lead.nextSibling, len = 0;
+    while (n) { rest.push(n); len += n.textContent.length; n = n.nextSibling; }
+    if (len < 100) return;
+    var d = document.createElement('details'); d.className = 'more';
+    var s = document.createElement('summary'); s.textContent = 'くわしく';
+    var body = document.createElement('div');
+    rest.forEach(function (x) { body.appendChild(x); });
+    d.appendChild(s); d.appendChild(body); li.appendChild(d);
+  });
+
+  // 見出し＋表（責任の一覧、発言の検証）：見出しごとに折りたたむ
+  document.querySelectorAll('main section > h3').forEach(function (h) {
+    var tbl = h.nextElementSibling;
+    if (!tbl || !tbl.classList.contains('tbl')) return;
+    var d = document.createElement('details'); d.className = 'fold';
+    var s = document.createElement('summary');
+    h.parentNode.insertBefore(d, h);
+    s.appendChild(h); s.appendChild(chip((tbl.querySelectorAll('tr').length - 1) + '件'));
+    d.appendChild(s); d.appendChild(tbl);
+  });
+
+  // 当事者への質問：相手ごとに折りたたむ
+  document.querySelectorAll('.qgroup').forEach(function (g) {
+    var h = g.querySelector('h3'), ol = g.querySelector('ol');
+    if (!h || !ol) return;
+    var d = document.createElement('details'); d.className = 'fold';
+    var s = document.createElement('summary');
+    s.appendChild(h); s.appendChild(chip(ol.children.length + '問'));
+    d.appendChild(s); d.appendChild(ol);
+    g.parentNode.replaceChild(d, g);
+  });
+
+  // 時系列：主な出来事だけ先に見せる
+  var tl = document.querySelector('#timeline table');
+  if (tl && tl.querySelector('tr.main')) {
+    var total = tl.rows.length - 1;
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'tl-toggle';
+    var setLabel = function () {
+      var brief = tl.classList.contains('brief');
+      btn.textContent = brief ? 'すべての出来事を表示（全' + total + '件）' : '主な出来事だけに戻す';
+      btn.setAttribute('aria-expanded', brief ? 'false' : 'true');
+    };
+    tl.classList.add('brief'); setLabel();
+    btn.addEventListener('click', function () { tl.classList.toggle('brief'); setLabel(); });
+    tl.parentElement.parentNode.insertBefore(btn, tl.parentElement.nextSibling);
+  }
+
+  // 「出典：…」の段落は、押したときだけ開く
+  document.querySelectorAll('main p.src').forEach(function (p) {
+    if (p.textContent.trim().indexOf('出典：') !== 0) return;
+    var d = document.createElement('details'); d.className = 'srcbox';
+    var s = document.createElement('summary'); s.textContent = '出典';
+    var body = document.createElement('div');
+    while (p.firstChild) body.appendChild(p.firstChild);
+    if (body.firstChild && body.firstChild.nodeType === 3) body.firstChild.textContent = body.firstChild.textContent.replace(/^\s*出典：/, '');
+    d.appendChild(s); d.appendChild(body);
+    p.parentNode.replaceChild(d, p);
+  });
+
+  // 図の説明：長いものは2行だけ見せる
+  document.querySelectorAll('main figcaption').forEach(function (cap) {
+    if (cap.textContent.length < 70) return;
+    var text = document.createElement('span'); text.className = 'cap-text';
+    while (cap.firstChild) text.appendChild(cap.firstChild);
+    var more = document.createElement('button');
+    more.type = 'button'; more.className = 'cap-more'; more.textContent = '説明を読む';
+    more.setAttribute('aria-expanded', 'false');
+    more.addEventListener('click', function () {
+      var closed = cap.classList.toggle('clamp');
+      more.textContent = closed ? '説明を読む' : '閉じる';
+      more.setAttribute('aria-expanded', closed ? 'false' : 'true');
+    });
+    cap.appendChild(text); cap.appendChild(more); cap.classList.add('clamp');
+  });
+
+  /* ---------- 読んだ位置を示す線 ---------- */
+  var bar = document.createElement('div');
+  bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  function onProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? Math.min(100, window.scrollY / max * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onProgress, { passive: true });
+  window.addEventListener('resize', onProgress);
+  onProgress();
+
   /* ---------- 見出しへのリンク（共有用） ---------- */
   document.querySelectorAll('main section[id] > h2').forEach(function (h) {
     var a = document.createElement('a');

@@ -23,8 +23,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="ローカルフードファイト in 鳥取（2026年11月7〜8日・倉吉）で何が起きたのかを、出店者用チャットの記録・当事者の公開投稿・画像資料・報道から検証する暫定版ノート。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -32,9 +32,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header class="top">
-  <span class="status">検証中・暫定版（2026年11月11日時点）</span>
-  <h1>ローカルフードファイト in 鳥取 検証ノート</h1>
-  <p class="sub">2026年11月7〜8日、鳥取県倉吉市。「来場想定5万人」をうたった食のイベントで何が起きたのかを、資料で確かめられることと、まだ決まらないことに分けて記録する。</p>
+  <div class="hero">
+    <div class="hero-text">
+      <span class="status">検証中・暫定版（2026年11月11日時点）</span>
+      <h1>ローカルフードファイト in 鳥取 <span>検証ノート</span></h1>
+      <p class="sub">2026年11月7〜8日、鳥取県倉吉市。「来場想定5万人」をうたった食のイベントで何が起きたのかを、資料で確かめられることと、まだ決まらないことに分けて記録する。</p>
+    </div>
+    <a class="hero-photo" href="#fig-tents">
+      <img src="evidence/line/LI13a_1107_0623_tents_on_ground.jpg" alt="11月7日早朝、雨上がりの芝生にテントが袋に入ったまま置かれている会場" width="491" height="408">
+      <span><b>11月7日 6:23</b>開催当日の朝。テントは袋に入ったまま、濡れた芝生の上に置かれていた</span>
+    </a>
+  </div>
+  <dl class="stats">
+    <div><dt>うたわれた来場者</dt><dd>5万人</dd><dd class="note">報道では2日間で500人〜2,000人未満</dd></div>
+    <div><dt>払われなかった前払い</dt><dd class="sm">293万6,780円</dd><dd class="note">期限は11月2日</dd></div>
+    <div><dt>備品の予約の取り消し</dt><dd>開催5日前</dd><dd class="note">出店者には知らされなかった</dd></div>
+    <div><dt>テントが届いた時刻</dt><dd>0:57</dd><dd class="note">開催当日の深夜</dd></div>
+  </dl>
 </header>
 
 <div class="wrap">
@@ -42,6 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <details open>
   <summary>目次</summary>
   <ol>
+    <li><a href="#quick">3行で言うと</a></li>
     <li><a href="#overview">まず、何が起きたのか</a></li>
     <li><a href="#people">登場する人と会社</a></li>
     <li><a href="#summary">現時点の結論</a></li>
@@ -64,16 +79,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main>
 
+<section id="quick">
+<h2>3行で言うと</h2>
+<ol class="quick">
+  <li><span class="tag">約束</span>主催側は「テント・机椅子・電気代込み」「来場想定5万人」とうたって、出店者を集めました（報道によると約50店）。</li>
+  <li><span class="tag">起きたこと</span>開催の5日前、前払い金が払われなかったために備品の予約が取り消されましたが、<strong>出店者には知らされませんでした</strong>。テントが届いたのは開催当日の深夜1時前で、来場者は報道によると2日間で500人〜2,000人未満でした。</li>
+  <li><span class="tag">いま</span>主催側と設営会社は、互いに相手の責任だと主張しています。返金や補償は、まだ決まっていません。「詐欺」や「持ち逃げ」を示す証拠は、確認できていません。</li>
+</ol>
+<h3>誰が誰に頼み、払ったのか</h3>
+<p class="src">矢印は、依頼とお金の向きです。</p>
+<div class="flow">
+  <div class="node"><b>出店者</b><span>全国の飲食店・キッチンカーなど。報道によると約50店</span></div>
+  <div class="arrow">出店料を払って申し込む</div>
+  <div class="node"><b>主催側</b><span>実行委員会と、その事務局の合同会社TOSU（代表・松林安美氏）。実行委員長はさよと氏。共催は株式会社リヴィアクス（代表・小澤瞬大氏）</span></div>
+  <div class="arrow">テントなどの手配と設営を頼む（前金を払い、残りは後払いの条件）</div>
+  <div class="node"><b>AXIS</b><span>設営会社</span></div>
+  <div class="arrow stop">テント・机などを予約 → <strong>ここで止まった</strong>：前払い293万6,780円（期限11月2日）の入金がなく、11月2日に予約が取り消された</div>
+  <div class="node"><b>レンタル業者</b><span>テント・机・椅子などを貸す会社</span></div>
+</div>
+<p>結論を先に読むなら <a href="#summary">現時点の結論</a> へ。それぞれの人と会社の立場は <a href="#people">登場する人と会社</a> にあります。</p>
+</section>
+
 <section id="overview">
 <h2>まず、何が起きたのか</h2>
 <p>「ローカルフードファイト in 鳥取」は、全国のご当地グルメの店が東西に分かれて売上を競う、という企画の食のイベントです。2026年11月7日（土）・8日（日）に、鳥取県倉吉市の鳥取県立美術館前（大御堂廃寺跡の芝生広場）で開かれました。</p>
-<ul>
-  <li><strong>出店者を集める段階</strong>：募集チラシには「来場想定5万人」「テント・机椅子・電気代込み」と書かれていました。出店料は数万円〜十数万円で、報道によると約50店が出店しました。</li>
-  <li><strong>開催の5日前（11月2日）</strong>：テントや机を借りる予約が、前払い金が払われなかったために取り消されました。このことは出店者に知らされませんでした。</li>
-  <li><strong>前日（11月6日）</strong>：出店者が会場に着いても、テントがありませんでした。テントが届いたのは日付が変わった深夜1時前です。</li>
-  <li><strong>当日（11月7日・8日）</strong>：設営スタッフが足りず、出店者もテントを建てるのを手伝いました。予定されていた共用の水道（シンク）は、初日には使えませんでした。来場者は、報道によると2日間で500人〜2,000人未満でした。2日目は出店をやめる店が出ました。</li>
-  <li><strong>開催後</strong>：主催側と設営会社が、互いに相手の責任だと主張しています。出店料の返金や損害の補償は、まだ決まっていません。</li>
-</ul>
+<ol class="steps">
+  <li><div><span class="step-when">出店者を集める段階</span><p>募集チラシには「来場想定5万人」「テント・机椅子・電気代込み」と書かれていました。出店料は数万円〜十数万円で、報道によると約50店が出店しました。</p></div><a class="thumb" href="#fig-flyer-front"><img src="evidence/sns/x_1123sayoto/flyer_20260803_front.jpg" alt="募集チラシの表面" loading="lazy"></a></li>
+  <li><div><span class="step-when">開催の5日前（11月2日）</span><p>テントや机を借りる予約が、前払い金が払われなかったために取り消されました。このことは出店者に知らされませんでした。</p></div><a class="thumb" href="#fig-mail"><img src="evidence/line/LI04_vendor_mail_1102_no_payment.jpg" alt="レンタル業者からの、予約取り消しを伝えるメール" loading="lazy"></a></li>
+  <li><div><span class="step-when">前日（11月6日）</span><p>出店者が会場に着いても、テントがありませんでした。テントが届いたのは日付が変わった深夜1時前です。</p></div></li>
+  <li><div><span class="step-when">当日（11月7日・8日）</span><p>設営スタッフが足りず、出店者もテントを建てるのを手伝いました。予定されていた共用の水道（シンク）は、初日には使えませんでした。来場者は、報道によると2日間で500人〜2,000人未満でした。2日目は出店をやめる店が出ました。</p></div><a class="thumb" href="#fig-venue"><img src="evidence/line/LI12b_1107_0834_venue_1.jpg" alt="11月7日8時34分の会場" loading="lazy"></a></li>
+  <li><div><span class="step-when">開催後</span><p>主催側と設営会社が、互いに相手の責任だと主張しています。出店料の返金や損害の補償は、まだ決まっていません。</p></div></li>
+</ol>
 <p>このページは、主催側と設営会社のどちらの言い分が資料と合うのかを、一つずつ確かめるためのものです。</p>
 </section>
 
@@ -187,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <img src="evidence/sns/x_1123sayoto/flyer_20260803_back.jpg" alt="出店者・協賛企業の募集チラシの裏面。VIP枠は早期割で10万円から7万円、通常枠は5万円から3万円。赤い帯にテント・机椅子・電気代込み、売上の15%、審査あり、と書かれている" loading="lazy">
   <figcaption><span class="b ok">確定</span>募集チラシ（裏）。さよと氏が2026年8月3日に<a href="https://x.com/1123sayoto/status/2084031304883163524">Xへ投稿</a>したもの。赤い帯に「<strong>テント・机椅子・電気代込み</strong>／売上の15%／審査あり」。VIP枠の特典に「事前告知ショート動画100万回再生保障」。上部に「2日間で5万人も来場！」。申込先は「大会事務局 合同会社TOSU」。右下の人物写真は黒塗りにしています。</figcaption>
 </figure>
-<figure>
+<figure id="fig-flyer-front">
   <img src="evidence/sns/x_1123sayoto/flyer_20260803_front.jpg" alt="募集チラシの表面。来場想定5万人、経済効果10億円と丸い枠で書かれている" loading="lazy">
   <figcaption><span class="b ok">確定</span>同じチラシの表。「<strong>来場想定5万人</strong>」「<strong>経済効果10億円</strong>」。下に小さく「写真は過去開催イベントの様子です」とある。FNNの報道（11/10）に映ったチラシと同じ文面。</figcaption>
 </figure>
@@ -211,30 +247,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>時系列</h2>
 <div class="tbl"><table>
 <tr><th>日時</th><th>出来事</th><th>出典</th></tr>
-<tr><td class="t">8/3</td><td>さよと氏が募集チラシをXに投稿。「来場想定5万人」「テント・机椅子・電気代込み」</td><td class="src"><a href="#fig-flyer">チラシ</a></td></tr>
+<tr class="main"><td class="t">8/3</td><td>さよと氏が募集チラシをXに投稿。「来場想定5万人」「テント・机椅子・電気代込み」</td><td class="src"><a href="#fig-flyer">チラシ</a></td></tr>
 <tr><td class="t">9/6</td><td>TOSUがAXISに備品の手配と設営を依頼（AXISの説明）。それまで頼む予定だった地元業者の見積は「1,000万円超を前金・即金」だった（松林安美氏の説明）。AXISとは前金と後払いの条件</td><td class="src">AXIS Threads（11/10）、松林安美氏のX（11/11）。日付と見積額は、それぞれ一方の説明</td></tr>
 <tr><td class="t">10/26</td><td>主催側「VIP用冷蔵トラックは6日21時に到着」。AXIS「全力で走って21時に到着できるようにします」</td><td class="src">チャット 13:32〜13:35</td></tr>
 <tr><td class="t">10/29頃</td><td>備品の最終的な数が決まる（AXISの説明）</td><td class="src">AXIS Threads（11/10）</td></tr>
 <tr><td class="t">10/31頃</td><td>AXISがレンタル業者で備品を確保（AXISの説明）。業者の前払い請求は<strong>293万6,780円、期限11/2</strong></td><td class="src"><a href="#fig-invoice">画像 LI03</a></td></tr>
-<tr><td class="t">11/2</td><td>レンタル業者がAXISに通知：「主催者様よりご入金の確認が取れませんでしたので今回はご準備する事が出来ません」。<strong>備品の予約が取り消される</strong></td><td class="src"><a href="#fig-mail">画像 LI04</a></td></tr>
-<tr><td class="t">11/3 1:34</td><td>松林安美氏→AXIS「資金調達は今の段階からは難しいので前入金55万円で行きたいです！55万なら契約書できたら即入金できます」</td><td class="src"><a href="#fig-55">画像 LI02</a></td></tr>
+<tr class="main"><td class="t">11/2</td><td>レンタル業者がAXISに通知：「主催者様よりご入金の確認が取れませんでしたので今回はご準備する事が出来ません」。<strong>備品の予約が取り消される</strong></td><td class="src"><a href="#fig-mail">画像 LI04</a></td></tr>
+<tr class="main"><td class="t">11/3 1:34</td><td>松林安美氏→AXIS「資金調達は今の段階からは難しいので前入金55万円で行きたいです！55万なら契約書できたら即入金できます」</td><td class="src"><a href="#fig-55">画像 LI02</a></td></tr>
 <tr><td class="t">11/3頃</td><td>主催側が「125万円＋さよと氏から25万円の、合計150万円なら払える」と連絡（AXISの説明）。AXISは別の業者で備品を探し始める</td><td class="src">チャット 11/11 16:40、17:03</td></tr>
-<tr><td class="t">11/4</td><td><strong>設営の契約書を締結</strong>（TOSUとAXIS。作成は小澤瞬大氏。日付はAXISの説明で、主催側は否定していない）。同じ日、出店者には「シンクは共用で1か所。テント内に水道は引かない」と案内</td><td class="src">チャット 11/11 17:18〜17:23、11/4 15:56</td></tr>
+<tr class="main"><td class="t">11/4</td><td><strong>設営の契約書を締結</strong>（TOSUとAXIS。作成は小澤瞬大氏。日付はAXISの説明で、主催側は否定していない）。同じ日、出店者には「シンクは共用で1か所。テント内に水道は引かない」と案内</td><td class="src">チャット 11/11 17:18〜17:23、11/4 15:56</td></tr>
 <tr><td class="t">11/6 8:54</td><td>さよと氏 Threads「全国どこでもいいので、食フェス用のテント余ってるところありませんか？」</td><td class="src"><a href="https://www.threads.com/@sayoto2tyan/post/DfYQnDrkkeS">Threads</a></td></tr>
-<tr><td class="t">11/6 14時</td><td>会場にテントがない。この時刻に着いた出店者は19時まで待った。設営スタッフは4人（予定は、松林安美氏によれば25人、AXISによれば20人）</td><td class="src">チャット 21:17、11/11 15:07、松林安美氏のX</td></tr>
+<tr class="main"><td class="t">11/6 14時</td><td>会場にテントがない。この時刻に着いた出店者は19時まで待った。設営スタッフは4人（予定は、松林安美氏によれば25人、AXISによれば20人）</td><td class="src">チャット 21:17、11/11 15:07、松林安美氏のX</td></tr>
 <tr><td class="t">11/6 17:14</td><td>さよと氏 Threads「冷蔵車、冷凍車2トンの持ってる人いませんか？」</td><td class="src"><a href="https://www.threads.com/@sayoto2tyan/post/DfZJ1ZUGExR">Threads</a></td></tr>
 <tr><td class="t">11/6 18:54</td><td>AXIS（チャット）「輸送中に車両トラブルになってしまい、大幅な遅延」。出店者への最初の説明。入金の問題には触れていない</td><td class="src">チャット</td></tr>
 <tr><td class="t">11/6 21:36</td><td>AXIS「冷蔵、冷凍車の件につきましては、予定時刻に手配出来ておらず申し訳ございません」</td><td class="src">チャット</td></tr>
 <tr><td class="t">11/6 21:39</td><td>「LFF事務局」名義（松林安美氏）「必ず開催は行います。テントも今すべて確保できました。私が責任持って即入金します」</td><td class="src">チャット</td></tr>
-<tr><td class="t">11/7 0:57</td><td>テントと10トン冷凍冷蔵車が到着</td><td class="src">チャット（小澤瞬大氏）</td></tr>
+<tr class="main"><td class="t">11/7 0:57</td><td>テントと10トン冷凍冷蔵車が到着</td><td class="src">チャット（小澤瞬大氏）</td></tr>
 <tr><td class="t">11/7 6:22</td><td>テントが袋に入ったまま、濡れた芝生に置かれている</td><td class="src"><a href="#fig-tents">画像 LI13</a></td></tr>
-<tr><td class="t">11/7 朝</td><td>出店者がテントの設営を手伝う。搬入は6時の予定から遅れる。電気が通ったのは9:08</td><td class="src">チャット・<a href="#fig-venue">画像 LI12</a></td></tr>
+<tr class="main"><td class="t">11/7 朝</td><td>出店者がテントの設営を手伝う。搬入は6時の予定から遅れる。電気が通ったのは9:08</td><td class="src">チャット・<a href="#fig-venue">画像 LI12</a></td></tr>
 <tr><td class="t">11/7 10:45</td><td>AXIS「水道の設置ですが現在確定ご用意できておりません」</td><td class="src">チャット</td></tr>
 <tr><td class="t">11/7 19:52</td><td>AXIS、水道は「明日の営業開始時には設置されている」という認識で「大丈夫です」</td><td class="src">チャット</td></tr>
 <tr><td class="t">11/7 22:01</td><td>翌日に保健所の確認が入ると告知。給水タンクなどの不足分は<strong>各店で用意</strong>するよう求める</td><td class="src">チャット・<a href="#fig-health">画像 LI07</a></td></tr>
 <tr><td class="t">11/7 23:26</td><td>AXIS、商品が溶けたと訴えた出店者に「弊社から今回冷凍設備の手配は一切行っておりません」</td><td class="src">チャット</td></tr>
-<tr><td class="t">11/8</td><td>9:37に出店者が「水道どこですか？」。松林安美氏は会場に来ない。2日目の出店をやめた店がある（読売新聞によると約10店）</td><td class="src">チャット、AXIS Threads、<a href="https://www.yomiuri.co.jp/national/20261110-GYT1T00367/">読売新聞</a></td></tr>
-<tr><td class="t">11/9〜11</td><td>関係者がそれぞれ謝罪。11/11に松林安美氏（X）とAXIS（Threads・チャット）が互いに反論</td><td class="src"><a href="#evidence">SNSの記録</a></td></tr>
+<tr class="main"><td class="t">11/8</td><td>9:37に出店者が「水道どこですか？」。松林安美氏は会場に来ない。2日目の出店をやめた店がある（読売新聞によると約10店）</td><td class="src">チャット、AXIS Threads、<a href="https://www.yomiuri.co.jp/national/20261110-GYT1T00367/">読売新聞</a></td></tr>
+<tr class="main"><td class="t">11/9〜11</td><td>関係者がそれぞれ謝罪。11/11に松林安美氏（X）とAXIS（Threads・チャット）が互いに反論</td><td class="src"><a href="#evidence">SNSの記録</a></td></tr>
 </table></div>
 </section>
 
@@ -503,6 +539,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 </main>
 </div>
-<script src="app.js?v=2" defer></script>
+<script src="app.js?v=4" defer></script>
 </body>
 </html>
