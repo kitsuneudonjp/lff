@@ -1,0 +1,39 @@
+name: 資料提供
+description: 検証に使える資料（画像・PDF・スクショ・URL）を提供する
+title: "[資料] "
+labels: ["資料提供"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issueは誰でも見られます。個人名・店名・連絡先が写った資料は、ここではなくメールで送ってください（CONTRIBUTING.md を参照）。
+  - type: input
+    id: when
+    attributes:
+      label: 資料の日時
+      description: 投稿・撮影・受信の日時（分かる範囲で）
+      placeholder: "例：2026-11-07 06:20 頃"
+  - type: input
+    id: where
+    attributes:
+      label: 出どころ
+      description: どこで手に入れた資料か（出店者グループ、公式LINE、X、メール、自分で撮影 など）
+  - type: textarea
+    id: what
+    attributes:
+      label: 何が分かる資料か
+      description: この資料で裏付けられること、または否定されること
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: 資料（ファイルやURL）
+      description: ここにドラッグして添付するか、URLを貼ってください。加工していない元のファイルが望ましいです。
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 確認
+      options:
+        - label: 個人情報（自分以外の名前・顔・連絡先）が写っている場合は、メールで送ることを理解しました
+          required: true
