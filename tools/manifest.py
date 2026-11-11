@@ -23,6 +23,20 @@ PUBLIC_DIR = SITE / "evidence"
 PRIVATE_SOURCES = [ROOT / "1111-1739.txt", ROOT / "evidence", ROOT / "archive"]
 SKIP_NAMES = {"SHA256SUMS", "manifest.json", "index.html"}
 
+# Google Tag Manager（site/index.html と同じコンテナ）
+GTM_ID = "GTM-5VJ6V8SR"
+GTM_HEAD = (
+    "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':"
+    "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
+    "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
+    "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);"
+    f"}})(window,document,'script','dataLayer','{GTM_ID}');</script>"
+)
+GTM_BODY = (
+    f'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_ID}" '
+    'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>'
+)
+
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -65,8 +79,10 @@ def main() -> int:
         for e in public)
     (PUBLIC_DIR / "index.html").write_text(
         '<!doctype html><html lang="ja"><head><meta charset="utf-8">'
+        f'{GTM_HEAD}'
         '<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">'
         '<title>公開証拠ファイル一覧</title><link rel="stylesheet" href="../style.css"></head><body>'
+        f'{GTM_BODY}'
         '<main style="max-width:1080px;margin:0 auto;padding:24px 16px">'
         '<p><a href="../index.html">← 検証ノートに戻る</a></p><h1>公開証拠ファイル一覧</h1>'
         f'<p>生成：{now}（UTC）。各ファイルの SHA-256 は <a href="SHA256SUMS">SHA256SUMS</a> と同じです。</p>'
