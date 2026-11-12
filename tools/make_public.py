@@ -53,16 +53,19 @@ ARCHIVE_PUBLIC = [
 # - プロフィール画面（「〇〇さんにフォローされています」「フォロー中」が出て、閲覧者のつながりが分かる）
 # - 健康・家族・第三者の年齢に触れる部分を含む画面
 # - 第三者の返信が並ぶ返信欄
+#
+# 松林安美氏の X（@ms759sk）は 2026-11-12 にアカウントごと削除された。
+# 削除前の記録として、本文の画面はすべて加工せずに公開する（ユーザー指示 2026-11-13）。
+# 切り落とすのは左右の列（閲覧者のアカウント表示・おすすめ欄）だけ。
 ARCHIVE_SKIP = {
-    "00_with_replies_tab_halfsize.jpg", "00_profile_20261111.jpg",
-    "01_2120317312121368663_c.jpg", "03_2120329698169569573_b.jpg",
     "06_DfildE2H3rq_b.jpg", "07_Dfi1o6Gn7pG_b.jpg", "07_Dfi1o6Gn7pG_c.jpg",
     "07_Dfi1o6Gn7pG_d.jpg", "07_Dfi1o6Gn7pG_e.jpg",
 }
 # 黒塗りする範囲（1440px 幅の元画像の座標）：健康状態に触れる文
+# 黒塗りする範囲（1440px 幅の元画像の座標）
 REDACT = {
-    "01_2120317312121368663_a.jpg": [(360, 158, 950, 214)],
-    "01_2120317312121368663_b.jpg": [(360, 618, 950, 694)],   # 入院・家族について
+    # プロフィールの「〇〇さんにフォローされています」は、閲覧者（このサイトの作成者）のつながりが分かるので消す
+    "00_profile_20261111.jpg": [(368, 552, 950, 584)],
 }
 
 
@@ -123,8 +126,25 @@ def export_flyer() -> None:
         print(f"sns/x_1123sayoto/{out_name}  {im.size}")
 
 
+# 削除を確認した画面（2026-11-12 21:08 JST）。中央の列の上の部分だけを切り出す。
+DELETED_SRC = ARCHIVE / "watch" / "deleted"
+DELETED_BOX = (356, 0, 955, 250)
+
+
+def export_deleted() -> None:
+    dst = ROOT / "site" / "evidence" / "sns" / "x_ms759sk" / "deleted"
+    dst.mkdir(parents=True, exist_ok=True)
+    for p in sorted(DELETED_SRC.glob("20261112_2108_*.jpg")):
+        im = Image.open(p).convert("RGB")
+        scale = im.size[0] / 1440
+        im = im.crop(tuple(int(v * scale) for v in DELETED_BOX))
+        im.save(dst / p.name, "JPEG", quality=90)   # メタデータは書き出さない
+        print(f"sns/x_ms759sk/deleted/{p.name}  {im.size}")
+
+
 def main() -> None:
     export_archive()
+    export_deleted()
     export_flyer()
     DST.mkdir(parents=True, exist_ok=True)
     sources = {p.name: p for p in SRC.glob("*.jpg")}
