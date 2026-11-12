@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-12T22:30:35+00:00",
+  "generated_utc": "2026-11-12T23:43:24+00:00",
   "files": [
     {
       "path": "evidence/line/LI02_1103_matsubayashi_to_axis_55man.jpg",
@@ -90,6 +90,41 @@
       "path": "evidence/official/O02_2_wayback20261008_vendor_faq.jpg",
       "sha256": "741285b9e9ac127660bb2cbcb54e3fe71d225d02c1d4bc412679aaf34ca2462c",
       "bytes": 128835
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/base_shop_20261113_law.jpg",
+      "sha256": "0d0af4adaaba41030d7cc0206a272fdab2a344eb3f6238ac2bb34df83732d5b1",
+      "bytes": 40799
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/base_shop_20261113_top.jpg",
+      "sha256": "288258b47d20f40f92e10fbd4681872f249e13f9495ef09444bc6db92b0adebf",
+      "bytes": 43814
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/lff_x_2109909971098120393_wayback.jpg",
+      "sha256": "304326508847a6861df2bb76da079ba4dc500772a9ed11c7fcb71a91a2d99218",
+      "bytes": 59672
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/lff_x_2110221559415930956_now.jpg",
+      "sha256": "7271355914b747a49eeafccdf0422361ab97de06670f9d2a9f6d9560c83d81eb",
+      "bytes": 28769
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/lff_x_2110221559415930956_wayback.jpg",
+      "sha256": "a7564ba9206c8488670ec4c1683ec639fe353202282bf7016a4161871b02c61a",
+      "bytes": 60351
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/tosu_x_rt_0909_wayback.jpg",
+      "sha256": "94785015e138919b26e04d0c2588f852eea6270b72fb7d8df1dd4a843a1e2e4f",
+      "bytes": 68181
+    },
+    {
+      "path": "evidence/sns/deleted_20261113/tosu_x_rt_1015_wayback.jpg",
+      "sha256": "3e47075f9494880fb0202728aaef99ebe8ebd2ad4f531471897cd81fcf3aa1f8",
+      "bytes": 71109
     },
     {
       "path": "evidence/sns/threads_axis/01_DfUNfVHn6nA_a.jpg",

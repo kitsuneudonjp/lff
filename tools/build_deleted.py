@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>削除された投稿の記録 LFF鳥取 検証ノート</title>
-<meta name="description" content="2026年11月12日に削除された、松林安美氏のX（@ms759sk）の全投稿9件とプロフィールを、削除前に保存したスクリーンショットと本文で公開する。">
+<meta name="description" content="ローカルフードファイト in 鳥取の主催側が削除した投稿と記録（松林安美氏のX、合同会社TOSUのX、公式Xの投稿、チケットショップの商品）を、削除前の保存とインターネットアーカイブの記録から公開する。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -158,6 +158,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .post .label{{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted)}}
 .shots{{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:16px 0}}
 .shots figure,.gone figure{{margin:0;background:#f1f0eb;box-shadow:none;cursor:zoom-in}}
+.records{{list-style:none;padding:0;margin:22px 0;display:grid;gap:8px;counter-reset:r}}
+.records li{{counter-increment:r}}
+.records a{{display:block;background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:10px 14px;position:relative;color:var(--ink);text-decoration:none;font-size:14px}}
+.records b{{display:block;font-size:15.5px}}
+.part{{margin-top:40px;padding-top:24px;border-top:2px solid var(--ink)}}
 .gone{{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:16px 0}}
 @media (max-width:600px){{.post{{padding:18px 14px 10px}}.shots{{grid-template-columns:1fr 1fr}}}}
 </style>
@@ -170,8 +175,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="page">
 <p class="back"><a href="index.html">← 検証ノートに戻る</a></p>
 <span class="status">重要資料の開示</span>
-<h1>削除された投稿の記録 <span>松林安美氏のX（@ms759sk）</span></h1>
-<p class="sub">合同会社TOSUの代表で実行委員の松林安美氏は、2026年11月11日にXで謝罪と経緯の説明を投稿しました。そのアカウントは翌12日に削除され、投稿はすべて見られなくなりました。削除の前日に保存していた全投稿を、ここで公開します。</p>
+<h1>削除された投稿の記録 <span>主催側が消したもの</span></h1>
+<p class="sub">イベントのあと、主催側のSNSの投稿やアカウント、チケットショップの商品が次々に消えています。削除の前に保存していたものと、インターネットアーカイブ（Wayback Machine）に残っていた記録から、消されたものを公開します。</p>
+<ol class="records">
+  <li><a href="#posts"><b>松林安美氏のX（@ms759sk）</b>11/12 にアカウントごと削除。全9件</a></li>
+  <li><a href="#tosu-x"><b>合同会社TOSUのX（@TOSUkurayoshi）</b>アカウントごと削除。「全国から5社テレビ局」「すでに50店舗」</a></li>
+  <li><a href="#lff-x"><b>公式X（@localfoodfight）の投稿 7件</b>「かつて9.4万人超を動員した熱狂が再び！」</a></li>
+  <li><a href="#base"><b>公式チケットショップの商品</b>すべて削除</a></li>
+  <li><a href="#line"><b>出店者用LINEの送信取り消し</b>主催側・設営会社の10件</a></li>
+  <li><a href="#checked"><b>消えていなかったもの</b>保存済みの投稿 1,440件を確認</a></li>
+</ol>
+<h2 class="part">松林安美氏のX（@ms759sk）</h2>
+<p>合同会社TOSUの代表で実行委員の松林安美氏は、2026年11月11日にXで謝罪と経緯の説明を投稿しました。そのアカウントは翌12日に削除され、投稿はすべて見られなくなりました。削除の前日に保存していた全投稿を公開します。</p>
 
 <div class="facts">
   <div><b>9件</b><span>本人の投稿すべて（11/11 9:46〜12:54）</span></div>
@@ -183,7 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 <section id="why">
 <h2>なぜ公開するのか</h2>
-<p>このアカウントの投稿には、実行委員会の内部の経緯（見積もり、前入金、設営業者とのやり取り、立て替え）が、当事者本人の言葉で書かれていました。出店者や関係者が支払いや補償を求めるとき、また報道や行政が事実を確かめるとき、<strong>本人が何を説明していたか</strong>は欠かせない資料です。削除で消えてしまわないよう、全文を残します。</p>
+<p>松林安美氏のXの投稿には、実行委員会の内部の経緯（見積もり、前入金、設営業者とのやり取り、立て替え）が、当事者本人の言葉で書かれていました。出店者や関係者が支払いや補償を求めるとき、また報道や行政が事実を確かめるとき、<strong>本人が何を説明していたか</strong>は欠かせない資料です。削除で消えてしまわないよう、全文を残します。</p>
 <p>内容が事実かどうかは、このページでは判断していません。ほかの記録と照らし合わせた結果は、<a href="index.html#claims">検証ノートの「発言の検証」</a>にあります。</p>
 <div class="warn"><strong>お願い</strong>：この記録は、事実を確かめるための資料です。松林安美氏本人やご家族への誹謗中傷、自宅や家族への接触は、絶対にしないでください。</div>
 </section>
@@ -218,17 +233,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="list" style="list-style:none;padding-left:0">{toc}</ul>
 {posts}
 </section>
+{{EXTRA}}
 </main>
 
 <footer>
   事実の誤り、反論、資料の提供を受け付けています（<a href="index.html#contribute">資料提供のお願い</a>）。<br>
-  最終更新：2026年11月13日
+  最終更新：2026年11月13日（主催側の削除の調査を追加）
 </footer>
 </div>
 <script src="app.js?v=4" defer></script>
 </body>
 </html>
 '''
+    html = html.replace("{EXTRA}", (SITE / "tools" / "deleted_extra.html").read_text(encoding="utf-8"))
     (SITE / "deleted.html").write_text(html, encoding="utf-8")
     print("deleted.html written")
 

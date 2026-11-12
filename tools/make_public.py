@@ -142,9 +142,37 @@ def export_deleted() -> None:
         print(f"sns/x_ms759sk/deleted/{p.name}  {im.size}")
 
 
+# 2026-11-13 の削除調査で見つけたもの（archive/20261113_deletion_investigation.md）。
+# Wayback Machine の記録画面は投稿カードの部分だけ、BASE と X の画面はそのまま使う。
+# どの画面にも閲覧者のアカウント表示は写っていない（Wayback と BASE はログインなしの表示、X は中央の列だけを撮影）。
+FOUND_SRC = ARCHIVE / "watch" / "deleted"
+FOUND = {
+    "20261113_wayback_localfoodfight_2109909971098120393_94000.jpg": ("lff_x_2109909971098120393_wayback.jpg", (395, 150, 1045, 545)),
+    "20261113_wayback_localfoodfight_2110221559415930956_94000.jpg": ("lff_x_2110221559415930956_wayback.jpg", (395, 150, 1045, 550)),
+    "20261113_x_localfoodfight_2110221559415930956_now.png": ("lff_x_2110221559415930956_now.jpg", None),
+    "20261113_wayback_sayoto_RT_tosukurayoshi_0909.jpg": ("tosu_x_rt_0909_wayback.jpg", (395, 150, 1045, 709)),
+    "20261113_wayback_sayoto_RT_tosukurayoshi_1015.jpg": ("tosu_x_rt_1015_wayback.jpg", (395, 150, 1045, 709)),
+    "20261113_base_shop_top_no_items.jpg": ("base_shop_20261113_top.jpg", None),
+    "20261113_base_shop_law.jpg": ("base_shop_20261113_law.jpg", None),
+}
+
+
+def export_found() -> None:
+    dst = ROOT / "site" / "evidence" / "sns" / "deleted_20261113"
+    dst.mkdir(parents=True, exist_ok=True)
+    for name, (out_name, box) in FOUND.items():
+        im = Image.open(FOUND_SRC / name).convert("RGB")
+        if box:
+            scale = im.size[0] / 1440
+            im = im.crop(tuple(int(v * scale) for v in box))
+        im.save(dst / out_name, "JPEG", quality=90)   # メタデータは書き出さない
+        print(f"sns/deleted_20261113/{out_name}  {im.size}")
+
+
 def main() -> None:
     export_archive()
     export_deleted()
+    export_found()
     export_flyer()
     DST.mkdir(parents=True, exist_ok=True)
     sources = {p.name: p for p in SRC.glob("*.jpg")}
