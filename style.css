@@ -256,3 +256,10 @@ html.lb-open{overflow:hidden}
 }
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}figure.flash{animation:none}*{transition:none !important}}
+
+/* ---------- まんがへの入口 ---------- */
+.manga-link{display:flex;gap:14px;align-items:center;margin-top:18px;padding:10px;background:var(--surface);border:2px solid var(--ink);border-radius:14px;color:var(--ink);text-decoration:none;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
+.manga-link:hover{transform:translate(-1px,-1px)}
+.manga-link img{width:84px;height:84px;object-fit:cover;border-radius:8px;flex:none}
+.manga-link span{font-size:13.5px;line-height:1.65;color:var(--muted)}
+.manga-link b{display:block;font-size:17px;color:var(--accent)}
