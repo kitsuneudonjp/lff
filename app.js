@@ -226,6 +226,25 @@
     tl.parentElement.parentNode.insertBefore(btn, tl.parentElement.nextSibling);
   }
 
+  // 長い出来事のリスト：最初の3件だけ見せる
+  document.querySelectorAll('main ul.log').forEach(function (ul) {
+    var lis = ul.children;
+    if (lis.length <= 4) return;
+    for (var i = 3; i < lis.length; i++) lis[i].classList.add('hide');
+    ul.classList.add('short');
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'log-more';
+    var rest = lis.length - 3;
+    b.textContent = '残り' + rest + '件を表示';
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function () {
+      var shortNow = ul.classList.toggle('short');
+      b.textContent = shortNow ? '残り' + rest + '件を表示' : '閉じる';
+      b.setAttribute('aria-expanded', shortNow ? 'false' : 'true');
+    });
+    ul.parentNode.insertBefore(b, ul.nextSibling);
+  });
+
   // 「出典：…」の段落は、押したときだけ開く
   document.querySelectorAll('main p.src').forEach(function (p) {
     if (p.textContent.trim().indexOf('出典：') !== 0) return;
@@ -240,7 +259,7 @@
 
   // 図の説明：長いものは2行だけ見せる
   document.querySelectorAll('main figcaption').forEach(function (cap) {
-    if (cap.textContent.length < 70) return;
+    if (cap.textContent.length < 70 || cap.closest('.evgrid')) return;
     var text = document.createElement('span'); text.className = 'cap-text';
     while (cap.firstChild) text.appendChild(cap.firstChild);
     var more = document.createElement('button');
