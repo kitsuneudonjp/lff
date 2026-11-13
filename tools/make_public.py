@@ -38,6 +38,13 @@ PUBLIC = {
     "LI16_": "LI16_1104_venue_map.jpg",
     "LI17a_": "LI17a_flyer_back_program.jpg",
     "LI17b_": "LI17b_flyer_front.jpg",
+    # 2026-11-13 追加（記録を全部載せる）。人物は遠くの後ろ姿のみ。上下の帯は切り落とす
+    "LI06_": "LI06_1111_vendor_posted_matsubayashi_x.jpg",
+    "LI12a_": "LI12a_1107_0853_venue.jpg",
+    "LI14_": "LI14_1107_1000_no_water_near_toilet.jpg",
+    "LI15_": "LI15_1107_0113_refrigerated_truck_arrived.jpg",
+    "LI18_": "LI18_1102_weather_forecast.jpg",
+    "LIxx_": "LIxx_file_list_expiry.jpg",
 }
 
 
@@ -181,6 +188,9 @@ NEW_LINE = {
         (290, 582, 360, 608),     # 納品先の担当者名
     ]),
     "LI22e_": ("LI22e_duskin_estimate_unit_prices.jpg", []),
+    "LI22b_": ("LI22b_duskin_estimate_p1_bottom_p2.jpg", []),
+    "LI22c_": ("LI22c_duskin_prepayment_invoice_top.jpg", []),
+    "LI22d_": ("LI22d_duskin_estimate_quantities.jpg", []),
     "LI23a_": ("LI23a_order_group_1104_maruchou_598400yen.jpg", [
         (110, 245, 205, 290),     # 受取口座の番号
         (405, 893, 462, 930),     # グループに追加された個人の表示名

@@ -65,7 +65,7 @@ def main() -> int:
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     public = []
-    for p in walk(PUBLIC_DIR):
+    for p in list(walk(PUBLIC_DIR)) + list(walk(SITE / "records")):
         rel = p.relative_to(SITE).as_posix()
         public.append({"path": rel, "sha256": sha256(p), "bytes": p.stat().st_size})
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
@@ -78,7 +78,7 @@ def main() -> int:
     # 公開ファイルの一覧ページ（GitHub Pages はフォルダの中身を表示しないため）
     from html import escape
     rows = "".join(
-        f'<tr><td><a href="{escape(e["path"][len("evidence/"):])}">{escape(e["path"])}</a></td>'
+        f'<tr><td><a href="../{escape(e["path"])}">{escape(e["path"])}</a></td>'
         f'<td>{e["bytes"]:,}</td><td><code>{e["sha256"]}</code></td></tr>'
         for e in public)
     (PUBLIC_DIR / "index.html").write_text(

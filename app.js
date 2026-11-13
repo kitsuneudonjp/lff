@@ -125,20 +125,28 @@
     a.addEventListener('click', function () { if (mq.matches && tocDetails) tocDetails.open = false; });
   });
 
+  // 今読んでいる節：画面の上から3割の位置を過ぎた最後の節（どの節でも必ずどれかが光る）
   var tocLinks = {};
   document.querySelectorAll('.toc a[href^="#"]').forEach(function (a) { tocLinks[a.getAttribute('href').slice(1)] = a; });
-  if ('IntersectionObserver' in window) {
-    var visible = {};
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
-      var ids = Object.keys(tocLinks);
-      var cur = null;
-      for (var i = 0; i < ids.length; i++) { if (visible[ids[i]]) { cur = ids[i]; break; } }
-      if (!cur) return;
-      ids.forEach(function (id) { tocLinks[id].classList.toggle('active', id === cur); });
-    }, { rootMargin: '-15% 0px -70% 0px' });
-    Object.keys(tocLinks).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+  var secs = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var curId = null, ticking = false;
+  function syncActive() {
+    ticking = false;
+    var line = window.innerHeight * 0.3, cur = secs.length ? secs[0].id : null;
+    for (var i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().top <= line) cur = secs[i].id; else break; }
+    if (cur === curId) return;
+    curId = cur;
+    Object.keys(tocLinks).forEach(function (id) { tocLinks[id].classList.toggle('active', id === cur); });
+    var a = tocLinks[cur], nav = document.querySelector('nav.toc');
+    if (a && nav && !mq.matches) {
+      var r = a.getBoundingClientRect(), nr = nav.getBoundingClientRect();
+      if (r.top < nr.top + 40 || r.bottom > nr.bottom - 40) nav.scrollTop += r.top - nr.top - nav.clientHeight / 2;
+    }
   }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; setTimeout(syncActive, 50); } }, { passive: true });
+  window.addEventListener('hashchange', function () { setTimeout(syncActive, 400); });
+  window.addEventListener('resize', syncActive);
+  syncActive();
 
   /* ---------- 表：スマホでカード表示にするための印を付ける（見た目は style.css） ---------- */
   document.querySelectorAll('.tbl > table').forEach(function (table) {
