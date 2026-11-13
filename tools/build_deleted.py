@@ -134,20 +134,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 <style>
 .page{{max-width:880px;margin:0 auto;padding:40px 16px 96px}}
 .page main{{padding-bottom:0}}
 .back{{font-size:14px}}
 .page h1{{margin-top:14px}}
 .facts{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:24px 0}}
-.facts div{{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 16px}}
+.facts div{{background:var(--surface);border-radius:var(--r);border:1px solid var(--line);padding:14px 16px}}
 .facts b{{display:block;font-size:22px;font-weight:900;line-height:1.3}}
 .facts span{{font-size:13px;color:var(--muted)}}
-.how{{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:6px 20px;margin:20px 0}}
+.how{{background:var(--surface);border-radius:var(--r);border:1px solid var(--line);padding:6px 20px;margin:20px 0}}
 .how li{{margin:6px 0}}
 .list{{columns:2 260px;font-size:14.5px;padding-left:1.4em}}
-.post{{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:22px 22px 14px;margin:28px 0;scroll-margin-top:16px}}
+.post{{background:var(--surface);border-radius:var(--r);border:1px solid var(--line);padding:22px 22px 14px;margin:28px 0;scroll-margin-top:16px}}
 .post > header{{display:flex;gap:14px;align-items:flex-start}}
 .post .no{{flex:none;font-size:13px;font-weight:900;color:#fff;background:var(--accent);border-radius:8px;padding:2px 8px;margin-top:4px}}
 .post h3{{margin:0;font-size:19px}}
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .shots figure,.gone figure{{margin:0;background:#f1f0eb;box-shadow:none;cursor:zoom-in}}
 .records{{list-style:none;padding:0;margin:22px 0;display:grid;gap:8px;counter-reset:r}}
 .records li{{counter-increment:r}}
-.records a{{display:block;background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:10px 14px;position:relative;color:var(--ink);text-decoration:none;font-size:14px}}
+.records a{{display:block;background:var(--surface);border-radius:12px;border:1px solid var(--line);padding:10px 14px;position:relative;color:var(--ink);text-decoration:none;font-size:14px}}
 .records b{{display:block;font-size:15.5px}}
 .part{{margin-top:40px;padding-top:24px;border-top:2px solid var(--ink)}}
 .gone{{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:16px 0}}
