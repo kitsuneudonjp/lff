@@ -1,6 +1,6 @@
 /* LFF鳥取 検証ノート — minimal */
 :root{
-  --bg:#ffffff; --surface:#ffffff; --soft:#f6f6f4; --ink:#111113; --text:#2b2b30; --muted:#7a7a80; --line:#ebebe8; --line-strong:#d9d9d4;
+  --bg:#ffffff; --surface:#ffffff; --soft:#f6f6f4; --ink:#111113; --text:#2b2b30; --muted:#5f5f66; --line:#ebebe8; --line-strong:#d9d9d4;
   --accent:#d13b1f; --accent-soft:#fdf0ec;
   --ok:#1f7a4d; --ok-bg:#eaf5ef;
   --likely:#2a5c9a; --likely-bg:#ebf1f9;
@@ -54,8 +54,8 @@ h1 span{display:block;color:var(--muted);font-weight:500;font-size:.5em;letter-s
 .cast b{font-size:15px;margin-right:8px}
 .cast .side{font-size:10.5px;font-weight:600;letter-spacing:.04em;color:var(--accent);white-space:nowrap}
 .cast .side.alt{color:var(--muted)}
-.cast li p{margin:1px 0 0;font-size:12.5px;line-height:1.65;color:var(--muted)}
-.credit{font-size:11.5px;color:var(--muted);margin:18px 0 0}
+.cast li p{margin:1px 0 0;font-size:13px;line-height:1.65;color:var(--muted)}
+.credit{font-size:12.5px;color:var(--muted);margin:18px 0 0}
 .credit a{color:var(--muted)}
 .story p{margin:0 0 14px;font-size:15.5px;line-height:2}
 
@@ -88,7 +88,7 @@ nav.toc details > summary::-webkit-details-marker{display:none}
 .b.dispute{color:var(--dispute);background:var(--dispute-bg)}
 .b.unver{color:var(--unver);background:var(--unver-bg)}
 .b.ng{color:var(--ng);background:var(--ng-bg)}
-.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0;font-size:12.5px;line-height:1.6;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0;font-size:13px;line-height:1.6;color:var(--muted)}
 .legend > span{display:flex;gap:2px;align-items:baseline}
 .legend .b{flex:none}
 
@@ -96,8 +96,8 @@ nav.toc details > summary::-webkit-details-marker{display:none}
 .flow{margin:12px 0 20px;display:flex;flex-direction:column;max-width:520px}
 .flow .node{border:1px solid var(--line);border-radius:var(--r);padding:12px 16px}
 .flow .node b{display:block;font-size:15px}
-.flow .node span{display:block;font-size:12.5px;line-height:1.65;color:var(--muted)}
-.flow .arrow{position:relative;margin-left:24px;padding:10px 0 12px 18px;border-left:1px solid var(--ink);font-size:12.5px;line-height:1.65;color:var(--muted)}
+.flow .node span{display:block;font-size:13px;line-height:1.65;color:var(--muted)}
+.flow .arrow{position:relative;margin-left:24px;padding:10px 0 12px 18px;border-left:1px solid var(--ink);font-size:13px;line-height:1.65;color:var(--muted)}
 .flow .arrow::after{content:"";position:absolute;left:-5px;bottom:-1px;border:4.5px solid transparent;border-top:6px solid var(--ink);border-bottom:none}
 .flow .arrow.stop{border-left:1px dashed var(--ng);color:var(--ng)}
 .flow .arrow.stop::after{border-top-color:var(--ng)}
@@ -130,7 +130,7 @@ details.more > summary::after,details.srcbox > summary::after,.src-toggle::after
 details.more[open] > summary::after,details.srcbox[open] > summary::after,.open > .src-toggle::after{transform:translateY(1px) rotate(-135deg)}
 details.more > div{margin-top:8px;color:var(--text)}
 details.srcbox{margin:10px 0}
-details.srcbox > div{margin-top:6px;font-size:12.5px;color:var(--muted);line-height:1.85}
+details.srcbox > div{margin-top:6px;font-size:13px;color:var(--muted);line-height:1.85}
 details.srcbox > div a{color:var(--muted)}
 
 details.fold{border-top:1px solid var(--line);margin:0}
@@ -157,7 +157,7 @@ td:first-child{min-width:6.5em}
 #claims td:first-child{min-width:15em}
 #claims td:last-child{min-width:8.5em}
 td.t{white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
-td.src,.src{font-size:12.5px;color:var(--muted)}
+td.src,.src{font-size:13px;color:var(--muted)}
 .src a{color:var(--muted)}
 ul.src{padding-left:1.3em}
 table.brief tr:not(.main):not(.head){display:none}
@@ -184,7 +184,7 @@ ul.log.short > li.hide{display:none}
 /* ---------- 図 ---------- */
 figure{margin:20px 0}
 figure img{display:block;max-width:100%;height:auto;border-radius:10px;margin:0 auto;border:1px solid var(--line)}
-figcaption{font-size:12.5px;color:var(--muted);margin:10px 2px 0;line-height:1.75}
+figcaption{font-size:13px;color:var(--muted);margin:10px 2px 0;line-height:1.75}
 figcaption.clamp .cap-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .cap-text{display:block}
 .cap-more{margin-top:4px}
@@ -243,18 +243,18 @@ h3.fh{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--muted);mar
 .holds > div:nth-child(odd){padding-right:24px;border-right:1px solid var(--line)}
 .holds > div:nth-child(even){padding-left:24px}
 .holds b{display:block;font-size:15px;line-height:1.65}
-.holds .ev{display:block;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.7}
-.holds .flip{display:block;font-size:12.5px;margin-top:8px;line-height:1.7;color:var(--accent)}
+.holds .ev{display:block;font-size:13px;color:var(--muted);margin-top:6px;line-height:1.7}
+.holds .flip{display:block;font-size:13px;margin-top:8px;line-height:1.7;color:var(--ink)}
 
 /* ---------- 証拠画像の一覧 ---------- */
 .evgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 14px;margin:18px 0}
 .evgrid figure{margin:0;display:flex;flex-direction:column}
 .evgrid img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top;border-radius:8px;background:var(--soft)}
-.evgrid figcaption{font-size:11.5px;line-height:1.55;margin:8px 0 0;color:var(--text)}
+.evgrid figcaption{font-size:12.5px;line-height:1.55;margin:8px 0 0;color:var(--text)}
 
 /* ---------- 説明の変遷：人ごとのまとめ ---------- */
 ul.who-sum{list-style:none;padding:0;margin:10px 0 24px;border-top:1px solid var(--line)}
-ul.who-sum li{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.85}
+ul.who-sum li{padding:14px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.85}
 ul.who-sum b{display:block;font-size:15px;margin-bottom:2px}
 
 /* ---------- スマホ ---------- */
@@ -281,7 +281,7 @@ ul.who-sum b{display:block;font-size:15px;margin-bottom:2px}
   .holds{grid-template-columns:1fr}
   .holds > div,.holds > div:nth-child(odd),.holds > div:nth-child(even){padding:16px 0;border-right:none}
   .evgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 10px}
-  .evgrid figcaption{font-size:11px}
+  .evgrid figcaption{font-size:12px}
 
   /* 表を1件ずつのカードにする（app.js が .cards を付ける） */
   table:not(.cards){min-width:560px}
@@ -292,7 +292,7 @@ ul.who-sum b{display:block;font-size:15px;margin-bottom:2px}
   table.cards tr.head{display:none}
   table.cards td{display:block;padding:0;border:none;min-width:0 !important;white-space:normal}
   table.cards td + td{margin-top:8px}
-  table.cards td::before{content:attr(data-label);display:block;font-size:10.5px;font-weight:600;letter-spacing:.08em;color:var(--muted)}
+  table.cards td::before{content:attr(data-label);display:block;font-size:11.5px;font-weight:600;letter-spacing:.08em;color:var(--muted)}
   table.cards td.c-title{font-weight:700;font-size:15px;color:var(--ink)}
   table.cards td.c-title::before,table.cards td.c-verdict::before,table.cards td.c-src::before{display:none}
   table.cards td.c-verdict{order:-1;margin:0 0 6px}
@@ -307,3 +307,26 @@ ul.who-sum b{display:block;font-size:15px;margin-bottom:2px}
 @media (max-width:420px){.evgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}figure.flash img{animation:none}*{transition:none !important}}
+
+/* ---------- 冒頭の結論・ボタン・最新の更新 ---------- */
+.lede{margin:0;font-size:16.5px;line-height:1.9;color:var(--text);max-width:36em}
+.lede b{color:var(--accent)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:1px solid var(--line-strong);color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;transition:border-color .15s,background .15s,color .15s}
+.btn::after{content:"→";opacity:.6}
+.btn:hover{border-color:var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.primary:hover{background:#000;color:#fff}
+ul.updates{list-style:none;margin:0 0 6px;padding:0;border-top:1px solid var(--line)}
+ul.updates li{position:relative;padding:11px 0 11px 58px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.75}
+ul.updates time{position:absolute;left:0;top:12px;font-size:12px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+ul.updates a{text-decoration:none;font-weight:700;margin-left:2px}
+
+/* ---------- 本文中の図は小さめに（タップで原寸） ---------- */
+main .figs{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+main .figs figure img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top}
+main section > figure img{max-height:440px;width:auto}
+main section > figure{max-width:420px}
+main section > figure img{max-height:320px}
+@media (max-width:820px){main section > figure{max-width:none}}
+@media (max-width:820px){h1{font-size:clamp(26px,7.6vw,34px)}.btn{padding:10px 16px;font-size:13.5px}}

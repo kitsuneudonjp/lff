@@ -128,13 +128,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'G-WRLJP6FQFK');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
 <title>削除された投稿の記録 LFF鳥取 検証ノート</title>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="LFF鳥取 検証ノート">
+<meta property="og:title" content="削除された投稿の記録｜ローカルフードファイト in 鳥取">
+<meta property="og:description" content="松林安美氏のX（全9件）、合同会社TOSUのX、公式Xの「かつて9.4万人超」、チケットショップの商品。主催側が消したものを公開。">
+<meta property="og:url" content="https://kitsuneudonjp.github.io/lff/deleted.html">
+<meta property="og:image" content="https://kitsuneudonjp.github.io/lff/img/ogp_deleted.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://kitsuneudonjp.github.io/lff/deleted.html">
+
 <meta name="description" content="ローカルフードファイト in 鳥取の主催側が削除した投稿と記録（松林安美氏のX、合同会社TOSUのX、公式Xの投稿、チケットショップの商品）を、削除前の保存とインターネットアーカイブの記録から公開する。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=15">
 <style>
 .page{{max-width:880px;margin:0 auto;padding:40px 16px 96px}}
 .page main{{padding-bottom:0}}
