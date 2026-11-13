@@ -53,6 +53,10 @@ ul.files{{list-style:none;padding:0;margin:10px 0;border-top:1px solid var(--lin
 ul.files li{{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}}
 ul.files li a{{text-decoration:none;font-weight:600}}
 ul.files li a::after{{content:" →";opacity:.5}}
+.keepnums{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0}}
+.keepnums div{{background:#fff;padding:16px 14px;font-size:12.5px;color:var(--muted)}}
+.keepnums b{{display:block;font-size:30px;line-height:1.1;color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums;margin-bottom:4px}}
+details.fold > summary .n{{font-size:12px;font-weight:600;color:var(--muted);margin-left:auto}}
 .evgrid{{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media (max-width:820px){{.evgrid{{grid-template-columns:repeat(3,minmax(0,1fr))}}}}
 @media (max-width:420px){{.evgrid{{grid-template-columns:repeat(2,minmax(0,1fr))}}}}
@@ -63,13 +67,24 @@ ul.files li a::after{{content:" →";opacity:.5}}
 <p class="back"><a href="index.html">← 検証ノートに戻る</a></p>
 <span class="status">記録の全部</span>
 <h1>記録の一覧 <span>検証に使った資料をすべて</span></h1>
-<p class="lede">画像{nimg}点、出店者用LINEグループの全文{total}件、主催側と設営会社のLINE、当事者のSNS投稿の保存テキストです。検証ノートの判断は、すべてこの中の記録にもとづいています。</p>
-<div class="jump"><a class="btn" href="#images">画像</a><a class="btn" href="#chat">出店者用LINE</a><a class="btn" href="#order">主催側と設営会社のLINE</a><a class="btn" href="#texts">SNSの保存テキスト</a></div>
+<p class="lede">保存した画面{nsaved}点のうち{nimg}点の画像、出店者用LINEグループの全文{total}件、主催側と設営会社のLINE、当事者のSNS投稿の保存テキストです。検証ノートの判断は、すべてこの中の記録にもとづいています。</p>
+<div class="jump"><a class="btn" href="#keep">保全について</a><a class="btn" href="#images">画像</a><a class="btn" href="#chat">出店者用LINE</a><a class="btn" href="#order">主催側と設営会社のLINE</a><a class="btn" href="#texts">SNSの保存テキスト</a></div>
 
 <main>
+<section id="keep">
+<h2>記録の保全について</h2>
+<p>主催側の投稿やアカウントは、騒動のあと次々に消されています。そのため、当事者が公開していた画面を、消される前に保存してきました。</p>
+<div class="keepnums"><div><b>{nsaved}</b>保存した画面・画像</div><div><b>{nimg}</b>このページで公開</div><div><b>{ntext}</b>保存した文字の記録</div></div>
+<p>保存した記録は、それ自体が何かを証明するものばかりではありません。それでも、あとから「そんな投稿はしていない」と言えないように、残しておくことに意味があると考えています。どのファイルも、保存した時点の値（SHA-256）を <a href="private-hashes.txt">非公開資料の一覧</a> に記録しており、あとから差し替えていないことを確かめられます。</p>
+<p class="src">ここに載せていないもの：報道の画面{nnews}点（著作権のため。下の記事一覧から元の記事を読めます）、出店者の店名が並ぶ画像、保存した人のアカウントが写る画面。</p>
+<details class="fold"><summary><h3>保存した報道（元の記事へのリンク）</h3><span class="n">{nart}本</span></summary><ul class="files">
+{newslist}
+</ul></details>
+</section>
+
 <section id="images">
 <h2>画像（{nimg}点）</h2>
-<p class="src">タップで拡大し、左右で切り替えられます。口座番号・個人名・出店者の名前などは黒塗りにしています。人物が近くに写るもの、出店者の店名が並ぶもの（協賛金募集の画像の一覧1点）は載せていません。</p>
+<p class="src">タップで拡大し、左右で切り替えられます。口座番号・個人名・出店者の名前は黒塗り、保存した人のアカウント表示は切り取っています。他のユーザーの公開の返信は、そのまま写っています。</p>
 {gallery}
 </section>
 

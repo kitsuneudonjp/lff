@@ -225,14 +225,71 @@ def order_html():
 
 # ---------- 画像の一覧 ----------
 GROUPS = [
-    ("line", "出店者用チャット・「発注確認」グループに投稿された画像", "evidence/line"),
-    ("sns/x_ms759sk", "松林安美氏のX（削除済み）", "evidence/sns/x_ms759sk"),
-    ("sns/threads_axis", "AXIS代表のThreads", "evidence/sns/threads_axis"),
-    ("sns/threads_sayoto2tyan", "さよと氏のThreads", "evidence/sns/threads_sayoto2tyan"),
-    ("sns/x_1123sayoto", "さよと氏のX（募集チラシ）", "evidence/sns/x_1123sayoto"),
-    ("sns/deleted_20261113", "削除の記録（Wayback Machine・チケットショップ）", "evidence/sns/deleted_20261113"),
-    ("official", "公式サイト・公的記録", "evidence/official"),
+    ("出店者用チャット・「発注確認」グループに投稿された画像", ["evidence/line"]),
+    ("松林安美氏のX（削除済み）", ["evidence/sns/x_ms759sk"]),
+    ("さよと氏のX", ["evidence/sns/x_1123sayoto", "evidence/archive_all/x_1123sayoto"]),
+    ("さよと氏のThreads", ["evidence/sns/threads_sayoto2tyan", "evidence/archive_all/threads_sayoto2tyan"]),
+    ("AXIS代表のThreads", ["evidence/sns/threads_axis", "evidence/archive_all/threads_axis.nao.official"]),
+    ("株式会社AXISのThreads・Instagram", ["evidence/archive_all/threads_axis.official_prod"]),
+    ("実行委員会の公式アカウント（X・Threads・Instagram・note）", ["evidence/archive_all/official_lff"]),
+    ("TikTok・公式サイト・TOSUのサイト", ["evidence/archive_all/other"]),
+    ("削除の記録（Wayback Machine・チケットショップ）", ["evidence/sns/deleted_20261113"]),
+    ("公式サイト・プレスリリース・Peatix・BASE（保存版）", ["evidence/official", "evidence/archive_all/evidence_official"]),
+    ("法人番号・gBizINFO・県の発表など公的記録", ["evidence/archive_all/evidence_records"]),
 ]
+PREFIX = {"x_1123sayoto": "さよと氏のX", "threads_sayoto2tyan": "さよと氏のThreads", "threads_axis.nao.official": "AXIS代表のThreads",
+          "threads_axis": "AXIS代表のThreads", "threads_axis.official_prod": "株式会社AXIS", "official_lff": "公式", "other": "",
+          "x_ms759sk": "松林安美氏のX"}
+
+
+def auto_caption(p):
+    st = p.stem
+    pre = PREFIX.get(p.parent.name, "")
+    kind = "投稿"
+    low = st.lower()
+    if "profile" in low:
+        kind = "プロフィール"
+    elif "timeline" in low:
+        kind = "タイムライン"
+    elif "replies" in low:
+        kind = "投稿の返信欄"
+    elif re.search(r"photo|image", low):
+        kind = "投稿の添付画像"
+    elif "notfound" in low:
+        kind = "アカウントが見つからない画面"
+    elif "password" in low:
+        kind = "パスワードで閉じられたサイト"
+    elif "reel" in low:
+        kind = "リール"
+    elif "tiktok" in low:
+        kind = "TikTokの投稿"
+    if "instagram" in low:
+        kind = "Instagram " + kind
+    elif "threads" in low and pre == "公式":
+        kind = "Threads " + kind
+    elif "note_" in low:
+        kind = "note " + kind
+    elif "tiktok_" in low and "TikTok" not in kind:
+        kind = "TikTok " + kind
+    if "localfoodfight.jp" in low:
+        kind = "公式サイト"
+    if "tosu-kurayoshi" in low:
+        kind = "TOSUのサイト（パスワード）"
+    jp = "・".join(re.findall(r"[ぁ-んァ-ヶー一-龠０-９A-Za-z0-9万人]*[ぁ-んァ-ヶ一-龠]+[ぁ-んァ-ヶー一-龠０-９A-Za-z0-9万人]*", st))
+    when = ""
+    m = re.search(r"wayback(20\d{2})(\d{2})(\d{2})", st)
+    if m:
+        when = f"Wayback {int(m.group(2))}/{int(m.group(3))}"
+    else:
+        m = re.search(r"(?:^|_)(20\d{2})(\d{2})(\d{2})_(\d{4})_", st)
+        m2 = re.search(r"(?:^|_)(20\d{2})(\d{2})(\d{2})(?:_|$)", st)
+        if m2 and m2.group(1)+m2.group(2)+m2.group(3) < "20261111":
+            when = f"{int(m2.group(2))}/{int(m2.group(3))}の投稿"
+            kind = kind.replace("投稿", "").strip() or ""
+        elif m2:
+            when = f"{int(m2.group(2))}/{int(m2.group(3))}保存"
+    parts = [x for x in (pre, jp or kind, when) if x]
+    return " ".join(parts)
 
 
 def labels():
@@ -248,20 +305,22 @@ def labels():
 def gallery_html():
     lab = labels()
     out, n = [], 0
-    for _, title, rel in GROUPS:
-        d = SITE / rel
-        files = sorted([p for p in d.rglob("*") if p.suffix.lower() in (".jpg", ".png")])
+    for title, rels in GROUPS:
+        files = []
+        for rel in rels:
+            d = SITE / rel
+            files += sorted([p for p in d.rglob("*") if p.suffix.lower() in (".jpg", ".png")])
         if not files:
             continue
         figs = []
         for p in files:
             src = p.relative_to(SITE).as_posix()
-            cap = lab.get(src) or p.stem.replace("_", " ")
+            cap = lab.get(src) or auto_caption(p)
             if len(cap) > 46:
                 cap = cap[:45] + "…"
             figs.append(f'<figure><img src="{src}" alt="{escape(cap)}" loading="lazy"><figcaption>{escape(cap)}</figcaption></figure>')
         n += len(files)
-        out.append(f'<details class="fold" open><summary><h3>{escape(title)}</h3><span class="n">{len(files)}点</span></summary><div class="evgrid">\n' + "\n".join(figs) + '\n</div></details>')
+        out.append(f'<details class="fold"><summary><h3>{escape(title)}</h3><span class="n">{len(files)}点</span></summary><div class="evgrid">\n' + "\n".join(figs) + '\n</div></details>')
     return "\n".join(out), n
 
 
@@ -305,6 +364,17 @@ def main():
     order_body = order_html()
     gal, nimg = gallery_html()
     tx = texts()
+    IMG = (".jpg", ".jpeg", ".png", ".webp")
+    nsaved = sum(1 for r in ("archive", "evidence") for q in (ROOT / r).rglob("*") if q.suffix.lower() in IMG)
+    ntext = sum(1 for r in ("archive", "evidence") for q in (ROOT / r).rglob("*") if q.suffix.lower() in (".md", ".txt", ".html", ".json"))
+    news = sorted((ROOT / "evidence" / "news").glob("*.md"))
+    nnews = sum(1 for q in (ROOT / "evidence" / "news").iterdir() if q.suffix.lower() in IMG)
+    nl = []
+    for q in news:
+        t = q.read_text(encoding="utf-8")
+        h = re.search(r"^# N\d+ (.+?)$", t, re.M).group(1)
+        u = re.search(r"https?://[^ )>\"]+", t).group(0)
+        nl.append(f'<li><a href="{u}" rel="noopener" target="_blank">{escape(h)}</a></li>')
     # 公開用のテキスト版も置く
     lines = []
     for d in days:
@@ -315,7 +385,7 @@ def main():
             lines.append(f"{t} {who} {scrub(body)}".replace("  ", " "))
     (OUT / "vendor_chat_anonymized.txt").write_text("出店者用LINEグループ（10/20〜11/13 10:15）。主催側・設営会社以外は記号に置き換え。\n" + "\n".join(lines), encoding="utf-8")
     tlist = "\n".join(f'<li><a href="records/{n}">{escape(t)}</a></li>' for n, t, _ in tx)
-    page = TEMPLATE.format(chat=chat_body, total=total, ndays=len(days), order=order_body, gallery=gal, nimg=nimg, texts=tlist, nalias=len(alias))
+    page = TEMPLATE.format(chat=chat_body, total=total, ndays=len(days), order=order_body, gallery=gal, nimg=nimg, texts=tlist, nalias=len(alias), nsaved=nsaved, ntext=ntext, nnews=nnews, nart=len(nl), newslist="\n".join(nl))
     (SITE / "records.html").write_text(page, encoding="utf-8")
     print("records.html", total, "messages,", nimg, "images, aliases", len(alias))
     unknown = [r for d in days for _, r in d["msgs"] if split_sender(r)[0] == "?"]

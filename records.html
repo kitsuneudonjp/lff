@@ -11,7 +11,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="LFF鳥取 検証ノート">
 <meta property="og:title" content="記録の一覧｜ローカルフードファイト in 鳥取 検証ノート">
-<meta property="og:description" content="画像90点、出店者用LINEグループの全文709件（匿名化）、主催側と設営会社のLINE、当事者のSNS投稿の保存テキスト。">
+<meta property="og:description" content="画像289点、出店者用LINEグループの全文709件（匿名化）、主催側と設営会社のLINE、当事者のSNS投稿の保存テキスト。">
 <meta property="og:url" content="https://kitsuneudonjp.github.io/lff/records.html">
 <meta property="og:image" content="https://kitsuneudonjp.github.io/lff/img/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -53,6 +53,10 @@ ul.files{list-style:none;padding:0;margin:10px 0;border-top:1px solid var(--line
 ul.files li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
 ul.files li a{text-decoration:none;font-weight:600}
 ul.files li a::after{content:" →";opacity:.5}
+.keepnums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0}
+.keepnums div{background:#fff;padding:16px 14px;font-size:12.5px;color:var(--muted)}
+.keepnums b{display:block;font-size:30px;line-height:1.1;color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums;margin-bottom:4px}
+details.fold > summary .n{font-size:12px;font-weight:600;color:var(--muted);margin-left:auto}
 .evgrid{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media (max-width:820px){.evgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:420px){.evgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -63,49 +67,72 @@ ul.files li a::after{content:" →";opacity:.5}
 <p class="back"><a href="index.html">← 検証ノートに戻る</a></p>
 <span class="status">記録の全部</span>
 <h1>記録の一覧 <span>検証に使った資料をすべて</span></h1>
-<p class="lede">画像90点、出店者用LINEグループの全文709件、主催側と設営会社のLINE、当事者のSNS投稿の保存テキストです。検証ノートの判断は、すべてこの中の記録にもとづいています。</p>
-<div class="jump"><a class="btn" href="#images">画像</a><a class="btn" href="#chat">出店者用LINE</a><a class="btn" href="#order">主催側と設営会社のLINE</a><a class="btn" href="#texts">SNSの保存テキスト</a></div>
+<p class="lede">保存した画面325点のうち289点の画像、出店者用LINEグループの全文709件、主催側と設営会社のLINE、当事者のSNS投稿の保存テキストです。検証ノートの判断は、すべてこの中の記録にもとづいています。</p>
+<div class="jump"><a class="btn" href="#keep">保全について</a><a class="btn" href="#images">画像</a><a class="btn" href="#chat">出店者用LINE</a><a class="btn" href="#order">主催側と設営会社のLINE</a><a class="btn" href="#texts">SNSの保存テキスト</a></div>
 
 <main>
+<section id="keep">
+<h2>記録の保全について</h2>
+<p>主催側の投稿やアカウントは、騒動のあと次々に消されています。そのため、当事者が公開していた画面を、消される前に保存してきました。</p>
+<div class="keepnums"><div><b>325</b>保存した画面・画像</div><div><b>289</b>このページで公開</div><div><b>87</b>保存した文字の記録</div></div>
+<p>保存した記録は、それ自体が何かを証明するものばかりではありません。それでも、あとから「そんな投稿はしていない」と言えないように、残しておくことに意味があると考えています。どのファイルも、保存した時点の値（SHA-256）を <a href="private-hashes.txt">非公開資料の一覧</a> に記録しており、あとから差し替えていないことを確かめられます。</p>
+<p class="src">ここに載せていないもの：報道の画面35点（著作権のため。下の記事一覧から元の記事を読めます）、出店者の店名が並ぶ画像、保存した人のアカウントが写る画面。</p>
+<details class="fold"><summary><h3>保存した報道（元の記事へのリンク）</h3><span class="n">9本</span></summary><ul class="files">
+<li><a href="https://newsdig.tbs.co.jp/articles/bss/3073094" rel="noopener" target="_blank">BSS山陰放送「5万人集客のはずが…500人!?」（2026-11-09）</a></li>
+<li><a href="https://www.fnn.jp/articles/-/1149865
+-" rel="noopener" target="_blank">FNNプライムオンライン「『あ然とした』5万人集客フードフェスが“ガラガラ”」（2026-11-10）</a></li>
+<li><a href="https://www.yomiuri.co.jp/national/20261110-GYT1T00367/
+-" rel="noopener" target="_blank">読売新聞オンライン「『５万人集客』見込んだ鳥取のグルメイベント、２０００人にも届かず」（2026-11-10）</a></li>
+<li><a href="https://news.ntv.co.jp/n/nkt/category/society/nk6c55c98f175445cdadde29d47f6af464
+-" rel="noopener" target="_blank">日本海テレビ「『目標には掲げましたが、約束はしていません』…」（2026-11-10）</a></li>
+<li><a href="https://news.ntv.co.jp/category/society/7ee45a1f066740b9bcab5b4622de66f1" rel="noopener" target="_blank">日テレNEWS NNN（news zero）「“集客5万人”見込むも…食フェス閑散 主催者の代表『目標に掲げたが約束はしていません』」（2026-11-11）</a></li>
+<li><a href="https://news.tv-asahi.co.jp/news_society/articles/900203959.html" rel="noopener" target="_blank">テレ朝NEWS（グッド!モーニング）「5万人想定“鳥取グルメ祭”に実際は来場客1000人？」（2026-11-11）</a></li>
+<li><a href="https://www.nnn.co.jp/articles/-/827864" rel="noopener" target="_blank">日本海新聞（NetNihonkai）「倉吉のグルメイベント『運営ずさん』波紋」（2026-11-11）</a></li>
+<li><a href="https://www.sanin-chuo.co.jp/articles/-/1113399
+-" rel="noopener" target="_blank">山陰中央新報デジタル「5万人来場うたうも2000人以下 倉吉、ローカル・フード・ファイト」（2026-11-11）</a></li>
+<li><a href="https://shueisha.online/articles/-/259188" rel="noopener" target="_blank">集英社オンライン「〈鳥取・グルメイベント大惨事〉『５万人のはずが来場者500人』…」（2026-11-11）</a></li>
+</ul></details>
+</section>
+
 <section id="images">
-<h2>画像（90点）</h2>
-<p class="src">タップで拡大し、左右で切り替えられます。口座番号・個人名・出店者の名前などは黒塗りにしています。人物が近くに写るもの、出店者の店名が並ぶもの（協賛金募集の画像の一覧1点）は載せていません。</p>
-<details class="fold" open><summary><h3>出店者用チャット・「発注確認」グループに投稿された画像</h3><span class="n">33点</span></summary><div class="evgrid">
+<h2>画像（289点）</h2>
+<p class="src">タップで拡大し、左右で切り替えられます。口座番号・個人名・出店者の名前は黒塗り、保存した人のアカウント表示は切り取っています。他のユーザーの公開の返信は、そのまま写っています。</p>
+<details class="fold"><summary><h3>出店者用チャット・「発注確認」グループに投稿された画像</h3><span class="n">33点</span></summary><div class="evgrid">
 <figure><img src="evidence/line/LI02_1103_matsubayashi_to_axis_55man.jpg" alt="11/3 松林氏「前入金55万円で」「テント届かなかったら」" loading="lazy"><figcaption>11/3 松林氏「前入金55万円で」「テント届かなかったら」</figcaption></figure>
 <figure><img src="evidence/line/LI03a_prepayment_invoice_2936780yen_due1102.jpg" alt="レンタル業者の前払代金請求書。請求金額2,936,780円、支払期日2026年11月2日" loading="lazy"><figcaption>レンタル業者の前払代金請求書。請求金額2,936,780円、支払期日2026年11月2日</figcaption></figure>
-<figure><img src="evidence/line/LI03b_invoice_items.jpg" alt="LI03b invoice items" loading="lazy"><figcaption>LI03b invoice items</figcaption></figure>
+<figure><img src="evidence/line/LI03b_invoice_items.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 <figure><img src="evidence/line/LI04_vendor_mail_1102_no_payment.jpg" alt="11/2 業者「入金の確認が取れず、準備できない」" loading="lazy"><figcaption>11/2 業者「入金の確認が取れず、準備できない」</figcaption></figure>
 <figure><img src="evidence/line/LI05_axis_status_list_refrigerated_trucks_arranged.jpg" alt="11/4 AXIS→主催3人「テント残46張」「冷蔵車 手配済」" loading="lazy"><figcaption>11/4 AXIS→主催3人「テント残46張」「冷蔵車 手配済」</figcaption></figure>
-<figure><img src="evidence/line/LI06_1111_vendor_posted_matsubayashi_x.jpg" alt="LI06 1111 vendor posted matsubayashi x" loading="lazy"><figcaption>LI06 1111 vendor posted matsubayashi x</figcaption></figure>
+<figure><img src="evidence/line/LI06_1111_vendor_posted_matsubayashi_x.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 <figure><img src="evidence/line/LI07a_health_center_booth_layout.jpg" alt="臨時営業の一般的な施設の図" loading="lazy"><figcaption>臨時営業の一般的な施設の図</figcaption></figure>
 <figure><img src="evidence/line/LI07b_required_equipment_layout.jpg" alt="必要な設備の配置図。給水タンク、排水バケツ、温度計などが描かれている" loading="lazy"><figcaption>必要な設備の配置図。給水タンク、排水バケツ、温度計などが描かれている</figcaption></figure>
-<figure><img src="evidence/line/LI12a_1107_0853_venue.jpg" alt="LI12a 1107 0853 venue" loading="lazy"><figcaption>LI12a 1107 0853 venue</figcaption></figure>
+<figure><img src="evidence/line/LI12a_1107_0853_venue.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 <figure><img src="evidence/line/LI12b_1107_0834_venue_1.jpg" alt="11/7 8:34 開場1時間半前の会場" loading="lazy"><figcaption>11/7 8:34 開場1時間半前の会場</figcaption></figure>
-<figure><img src="evidence/line/LI12c_1107_0834_venue_2.jpg" alt="LI12c 1107 0834 venue 2" loading="lazy"><figcaption>LI12c 1107 0834 venue 2</figcaption></figure>
-<figure><img src="evidence/line/LI12d_1107_0834_venue_3.jpg" alt="LI12d 1107 0834 venue 3" loading="lazy"><figcaption>LI12d 1107 0834 venue 3</figcaption></figure>
+<figure><img src="evidence/line/LI12c_1107_0834_venue_2.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI12d_1107_0834_venue_3.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 <figure><img src="evidence/line/LI12e_1107_0803_venue.jpg" alt="8時03分の会場" loading="lazy"><figcaption>8時03分の会場</figcaption></figure>
 <figure><img src="evidence/line/LI12f_1107_0745_vip_tent.jpg" alt="7時45分の会場" loading="lazy"><figcaption>7時45分の会場</figcaption></figure>
 <figure><img src="evidence/line/LI13a_1107_0623_tents_on_ground.jpg" alt="11月7日早朝、雨上がりの芝生にテントが袋に入ったまま置かれている会場" loading="lazy"><figcaption>11月7日早朝、雨上がりの芝生にテントが袋に入ったまま置かれている会場</figcaption></figure>
-<figure><img src="evidence/line/LI13b_1107_0622_venue_early.jpg" alt="LI13b 1107 0622 venue early" loading="lazy"><figcaption>LI13b 1107 0622 venue early</figcaption></figure>
-<figure><img src="evidence/line/LI14_1107_1000_no_water_near_toilet.jpg" alt="LI14 1107 1000 no water near toilet" loading="lazy"><figcaption>LI14 1107 1000 no water near toilet</figcaption></figure>
-<figure><img src="evidence/line/LI15_1107_0113_refrigerated_truck_arrived.jpg" alt="LI15 1107 0113 refrigerated truck arrived" loading="lazy"><figcaption>LI15 1107 0113 refrigerated truck arrived</figcaption></figure>
-<figure><img src="evidence/line/LI16_1104_venue_map.jpg" alt="LI16 1104 venue map" loading="lazy"><figcaption>LI16 1104 venue map</figcaption></figure>
-<figure><img src="evidence/line/LI17a_flyer_back_program.jpg" alt="LI17a flyer back program" loading="lazy"><figcaption>LI17a flyer back program</figcaption></figure>
-<figure><img src="evidence/line/LI17b_flyer_front.jpg" alt="LI17b flyer front" loading="lazy"><figcaption>LI17b flyer front</figcaption></figure>
-<figure><img src="evidence/line/LI18_1102_weather_forecast.jpg" alt="LI18 1102 weather forecast" loading="lazy"><figcaption>LI18 1102 weather forecast</figcaption></figure>
+<figure><img src="evidence/line/LI13b_1107_0622_venue_early.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI14_1107_1000_no_water_near_toilet.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI15_1107_0113_refrigerated_truck_arrived.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI16_1104_venue_map.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI17a_flyer_back_program.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI17b_flyer_front.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI18_1102_weather_forecast.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 <figure><img src="evidence/line/LI20_axis_line_55man_account_not_opened_1004.jpg" alt="10/4 AXIS「口座開設手続き途中」" loading="lazy"><figcaption>10/4 AXIS「口座開設手続き途中」</figcaption></figure>
 <figure><img src="evidence/line/LI21_axis_estimate_consulting_fee_1070000.jpg" alt="AXISの見積「コンサル費107万円」" loading="lazy"><figcaption>AXISの見積「コンサル費107万円」</figcaption></figure>
 <figure><img src="evidence/line/LI22a_duskin_estimate_1102_2936780yen.jpg" alt="業者の見積書。前払い293万円、発行も期限も11/2" loading="lazy"><figcaption>業者の見積書。前払い293万円、発行も期限も11/2</figcaption></figure>
-<figure><img src="evidence/line/LI22b_duskin_estimate_p1_bottom_p2.jpg" alt="LI22b duskin estimate p1 bottom p2" loading="lazy"><figcaption>LI22b duskin estimate p1 bottom p2</figcaption></figure>
-<figure><img src="evidence/line/LI22c_duskin_prepayment_invoice_top.jpg" alt="LI22c duskin prepayment invoice top" loading="lazy"><figcaption>LI22c duskin prepayment invoice top</figcaption></figure>
-<figure><img src="evidence/line/LI22d_duskin_estimate_quantities.jpg" alt="LI22d duskin estimate quantities" loading="lazy"><figcaption>LI22d duskin estimate quantities</figcaption></figure>
-<figure><img src="evidence/line/LI22e_duskin_estimate_unit_prices.jpg" alt="LI22e duskin estimate unit prices" loading="lazy"><figcaption>LI22e duskin estimate unit prices</figcaption></figure>
-<figure><img src="evidence/line/LI23a_order_group_1104_maruchou_598400yen.jpg" alt="LI23a order group 1104 maruchou 598400yen" loading="lazy"><figcaption>LI23a order group 1104 maruchou 598400yen</figcaption></figure>
+<figure><img src="evidence/line/LI22b_duskin_estimate_p1_bottom_p2.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI22c_duskin_prepayment_invoice_top.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI22d_duskin_estimate_quantities.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI22e_duskin_estimate_unit_prices.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/line/LI23a_order_group_1104_maruchou_598400yen.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 <figure><img src="evidence/line/LI23b_order_group_1104_tosu_transfer_598400yen.jpg" alt="11/4 TOSUが業者へ59万8,400円を振込" loading="lazy"><figcaption>11/4 TOSUが業者へ59万8,400円を振込</figcaption></figure>
 <figure><img src="evidence/line/LI24_tosu_transfer_1105_jnet_114000yen_requester_axis.jpg" alt="11/5 振込依頼人名は「アクシス」" loading="lazy"><figcaption>11/5 振込依頼人名は「アクシス」</figcaption></figure>
-<figure><img src="evidence/line/LIxx_file_list_expiry.jpg" alt="LIxx file list expiry" loading="lazy"><figcaption>LIxx file list expiry</figcaption></figure>
+<figure><img src="evidence/line/LIxx_file_list_expiry.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
 </div></details>
-<details class="fold" open><summary><h3>松林安美氏のX（削除済み）</h3><span class="n">27点</span></summary><div class="evgrid">
+<details class="fold"><summary><h3>松林安美氏のX（削除済み）</h3><span class="n">27点</span></summary><div class="evgrid">
 <figure><img src="evidence/sns/x_ms759sk/00_profile_20261111.jpg" alt="プロフィールと返信タブ（1/2）のスクリーンショット" loading="lazy"><figcaption>プロフィールと返信タブ（1/2）のスクリーンショット</figcaption></figure>
 <figure><img src="evidence/sns/x_ms759sk/00_with_replies_tab_halfsize.jpg" alt="プロフィールと返信タブ（2/2）のスクリーンショット" loading="lazy"><figcaption>プロフィールと返信タブ（2/2）のスクリーンショット</figcaption></figure>
 <figure><img src="evidence/sns/x_ms759sk/01_2120317312121368663_a.jpg" alt="01 2026/11/11 09:46 の投稿（1/3）のスクリーンショット" loading="lazy"><figcaption>01 2026/11/11 09:46 の投稿（1/3）のスクリーンショット</figcaption></figure>
@@ -134,35 +161,213 @@ ul.files li a::after{content:" →";opacity:.5}
 <figure><img src="evidence/sns/x_ms759sk/deleted/20261112_2108_2120364504076952008.jpg" alt="削除を確認した画面" loading="lazy"><figcaption>削除を確認した画面</figcaption></figure>
 <figure><img src="evidence/sns/x_ms759sk/deleted/20261112_2108_x_ms759sk_profile.jpg" alt="削除を確認した画面" loading="lazy"><figcaption>削除を確認した画面</figcaption></figure>
 </div></details>
-<details class="fold" open><summary><h3>AXIS代表のThreads</h3><span class="n">19点</span></summary><div class="evgrid">
-<figure><img src="evidence/sns/threads_axis/01_DfUNfVHn6nA_a.jpg" alt="01 DfUNfVHn6nA a" loading="lazy"><figcaption>01 DfUNfVHn6nA a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/02_DfUnbYhH0kf_a.jpg" alt="02 DfUnbYhH0kf a" loading="lazy"><figcaption>02 DfUnbYhH0kf a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/03_DfXFAAUn2jL_a.jpg" alt="03 DfXFAAUn2jL a" loading="lazy"><figcaption>03 DfXFAAUn2jL a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/04_DfbxPuIn--A_a.jpg" alt="04 DfbxPuIn--A a" loading="lazy"><figcaption>04 DfbxPuIn--A a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/05_DfgDi9PH0_P_a.jpg" alt="05 DfgDi9PH0 P a" loading="lazy"><figcaption>05 DfgDi9PH0 P a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/06_DfildE2H3rq_a.jpg" alt="06 DfildE2H3rq a" loading="lazy"><figcaption>06 DfildE2H3rq a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/07_Dfi1o6Gn7pG_a.jpg" alt="07 Dfi1o6Gn7pG a" loading="lazy"><figcaption>07 Dfi1o6Gn7pG a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/08_Dfi68Eln3cn_a.jpg" alt="08 Dfi68Eln3cn a" loading="lazy"><figcaption>08 Dfi68Eln3cn a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/08_Dfi68Eln3cn_b.jpg" alt="08 Dfi68Eln3cn b" loading="lazy"><figcaption>08 Dfi68Eln3cn b</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/08_Dfi68Eln3cn_c.jpg" alt="08 Dfi68Eln3cn c" loading="lazy"><figcaption>08 Dfi68Eln3cn c</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/09_DfjH-CvH47L_a.jpg" alt="09 DfjH-CvH47L a" loading="lazy"><figcaption>09 DfjH-CvH47L a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/09_DfjHzY9n1FC_a.jpg" alt="09 DfjHzY9n1FC a" loading="lazy"><figcaption>09 DfjHzY9n1FC a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/10_axis.official_prod_Dfj42ITD4xP_a.jpg" alt="10 axis.official prod Dfj42ITD4xP a" loading="lazy"><figcaption>10 axis.official prod Dfj42ITD4xP a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/10_Dfjfjqan2sv_a.jpg" alt="10 Dfjfjqan2sv a" loading="lazy"><figcaption>10 Dfjfjqan2sv a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/10_DfjS6CUH14z_a.jpg" alt="10 DfjS6CUH14z a" loading="lazy"><figcaption>10 DfjS6CUH14z a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/10_Dfkh-mKn4Nq_a.jpg" alt="10 Dfkh-mKn4Nq a" loading="lazy"><figcaption>10 Dfkh-mKn4Nq a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/12_DfldP0EH-b2_a.jpg" alt="12 DfldP0EH-b2 a" loading="lazy"><figcaption>12 DfldP0EH-b2 a</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/12_DfldP0EH-b2_b.jpg" alt="12 DfldP0EH-b2 b" loading="lazy"><figcaption>12 DfldP0EH-b2 b</figcaption></figure>
-<figure><img src="evidence/sns/threads_axis/12_DfldP0EH-b2_c.jpg" alt="12 DfldP0EH-b2 c" loading="lazy"><figcaption>12 DfldP0EH-b2 c</figcaption></figure>
-</div></details>
-<details class="fold" open><summary><h3>さよと氏のThreads</h3><span class="n">1点</span></summary><div class="evgrid">
-<figure><img src="evidence/sns/threads_sayoto2tyan/01_timeline_06.jpg" alt="11/6 さよと氏がSNSでテントを募集" loading="lazy"><figcaption>11/6 さよと氏がSNSでテントを募集</figcaption></figure>
-</div></details>
-<details class="fold" open><summary><h3>さよと氏のX（募集チラシ）</h3><span class="n">2点</span></summary><div class="evgrid">
+<details class="fold"><summary><h3>さよと氏のX</h3><span class="n">28点</span></summary><div class="evgrid">
 <figure><img src="evidence/sns/x_1123sayoto/flyer_20260803_back.jpg" alt="募集チラシ「テント・机椅子・電気代込み」" loading="lazy"><figcaption>募集チラシ「テント・机椅子・電気代込み」</figcaption></figure>
 <figure><img src="evidence/sns/x_1123sayoto/flyer_20260803_front.jpg" alt="募集チラシ「来場想定5万人」" loading="lazy"><figcaption>募集チラシ「来場想定5万人」</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/00_profile_20261111.jpg" alt="さよと氏のX プロフィール 11/11保存" loading="lazy"><figcaption>さよと氏のX プロフィール 11/11保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/00a_2084031304883163524_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/00a_2084031304883163524_photo1.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/00a_2084031304883163524_photo2.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/01_2097057193359261762_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/02_2119793595544952888_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/02_2119793595544952888_photo1.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/03_2119890302957982009_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/03_2119890302957982009_photo1.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/03_2119890302957982009_photo2.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/03_2119890302957982009_photo3.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/04_2119920108399374777_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/04_2119920108399374777_b.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/05_2120119969543520553_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/05_2120119969543520553_photo1.jpg" alt="さよと氏のX 投稿の添付画像" loading="lazy"><figcaption>さよと氏のX 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/06_2120131317832765486_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/07_2120144227032314194_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/08_2120320296515494378_a.jpg" alt="さよと氏のX 投稿" loading="lazy"><figcaption>さよと氏のX 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261112_2120628386393624861_a.jpg" alt="さよと氏のX 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261112_2120628386393624861_b.jpg" alt="さよと氏のX 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261112_2120686076037914803_a.jpg" alt="さよと氏のX 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261112_2120686076037914803_b.jpg" alt="さよと氏のX 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261112_2120690690195931643_a.jpg" alt="さよと氏のX 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261113_2121080360532582536_a.jpg" alt="さよと氏のX 投稿 11/13保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261113_2121080360532582536_b.jpg" alt="さよと氏のX 投稿 11/13保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/x_1123sayoto/20261113_2121080360532582536_c.jpg" alt="さよと氏のX 投稿 11/13保存" loading="lazy"><figcaption>さよと氏のX 投稿 11/13保存</figcaption></figure>
 </div></details>
-<details class="fold" open><summary><h3>削除の記録（Wayback Machine・チケットショップ）</h3><span class="n">7点</span></summary><div class="evgrid">
+<details class="fold"><summary><h3>さよと氏のThreads</h3><span class="n">37点</span></summary><div class="evgrid">
+<figure><img src="evidence/sns/threads_sayoto2tyan/01_timeline_06.jpg" alt="11/6 さよと氏がSNSでテントを募集" loading="lazy"><figcaption>11/6 さよと氏がSNSでテントを募集</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/00_profile_20261111.jpg" alt="さよと氏のThreads プロフィール 11/11保存" loading="lazy"><figcaption>さよと氏のThreads プロフィール 11/11保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_01.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_02.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_03.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_04.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_05.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_07.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/01_timeline_08.jpg" alt="さよと氏のThreads タイムライン" loading="lazy"><figcaption>さよと氏のThreads タイムライン</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260729_DbYe_aqGN2p.jpg" alt="さよと氏のThreads 7/29の投稿" loading="lazy"><figcaption>さよと氏のThreads 7/29の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260811_Db5Z7YlEr3w.jpg" alt="さよと氏のThreads 8/11の投稿" loading="lazy"><figcaption>さよと氏のThreads 8/11の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260813_Db_mwhZEnwS.jpg" alt="さよと氏のThreads 8/13の投稿" loading="lazy"><figcaption>さよと氏のThreads 8/13の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260819_DcOCw1iGM1b.jpg" alt="さよと氏のThreads 8/19の投稿" loading="lazy"><figcaption>さよと氏のThreads 8/19の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260825_DcesgBXEhbJ.jpg" alt="さよと氏のThreads 8/25の投稿" loading="lazy"><figcaption>さよと氏のThreads 8/25の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260906_Dc8fKgzjBol.jpg" alt="さよと氏のThreads 9/6の投稿" loading="lazy"><figcaption>さよと氏のThreads 9/6の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20260916_DdVKeC2DbYI.jpg" alt="さよと氏のThreads 9/16の投稿" loading="lazy"><figcaption>さよと氏のThreads 9/16の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/05_20261003_DeDxaytGBK1.jpg" alt="さよと氏のThreads 10/3の投稿" loading="lazy"><figcaption>さよと氏のThreads 10/3の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/06_DfiadsRkobD.jpg" alt="さよと氏のThreads 投稿" loading="lazy"><figcaption>さよと氏のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfa06ZeH8LR_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfhO6OiGMt8_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfiaO7qko66_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfigcx2kncW_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfiP0lzAYib_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfiP0lzAYib_b.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfiP13IgXk0_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfiP13IgXk0_b.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfj0tQomAfu_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfj6FWDmLPj_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfj72lyGNAe_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfj74kfmELD_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfj_94jGCiZ_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfn2EPKGKXI_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_Dfn4WhlmMbB_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfYQnDrkkeS_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261112_DfZJ1ZUGExR_a.jpg" alt="さよと氏のThreads 投稿 11/12保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261113_DfqndEZkpqF_a.jpg" alt="さよと氏のThreads 投稿 11/13保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_sayoto2tyan/20261113_DfqndEZkpqF_b.jpg" alt="さよと氏のThreads 投稿 11/13保存" loading="lazy"><figcaption>さよと氏のThreads 投稿 11/13保存</figcaption></figure>
+</div></details>
+<details class="fold"><summary><h3>AXIS代表のThreads</h3><span class="n">89点</span></summary><div class="evgrid">
+<figure><img src="evidence/sns/threads_axis/01_DfUNfVHn6nA_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/02_DfUnbYhH0kf_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/03_DfXFAAUn2jL_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/04_DfbxPuIn--A_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/05_DfgDi9PH0_P_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/06_DfildE2H3rq_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/07_Dfi1o6Gn7pG_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/08_Dfi68Eln3cn_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/08_Dfi68Eln3cn_b.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/08_Dfi68Eln3cn_c.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/09_DfjH-CvH47L_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/09_DfjHzY9n1FC_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/10_axis.official_prod_Dfj42ITD4xP_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/10_Dfjfjqan2sv_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/10_DfjS6CUH14z_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/10_Dfkh-mKn4Nq_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/12_DfldP0EH-b2_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/12_DfldP0EH-b2_b.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/sns/threads_axis/12_DfldP0EH-b2_c.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/00_profile_20261111.jpg" alt="AXIS代表のThreads プロフィール 11/11保存" loading="lazy"><figcaption>AXIS代表のThreads プロフィール 11/11保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/06_DfildE2H3rq_b.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/07_Dfi1o6Gn7pG_b.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/07_Dfi1o6Gn7pG_c.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/07_Dfi1o6Gn7pG_d.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/07_Dfi1o6Gn7pG_e.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/09_DfjHzY9n1FC_b.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/10_Dfkh-mKn4Nq_b_quoted_image.jpg" alt="AXIS代表のThreads 投稿の添付画像" loading="lazy"><figcaption>AXIS代表のThreads 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/11_Dfk9wKoklsY_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/11_Dfk9wKoklsY_b_image.jpg" alt="AXIS代表のThreads 投稿の添付画像" loading="lazy"><figcaption>AXIS代表のThreads 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/11_Dfk9wKoklsY_c_replies.jpg" alt="AXIS代表のThreads 投稿の返信欄" loading="lazy"><figcaption>AXIS代表のThreads 投稿の返信欄</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/11_DflLcP4H-cB_DflLcPYHxL7_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/11_DflLcQeny8q_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/12_DfldP0EH-b2_d.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/12_DfldP0EH-b2_e.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/13_Dflh2eQHwIO_a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/13_Dflh2eQHwIO_b.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_01_DflffNgn6Pz.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_02_DflO5A_n8Uy.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_03_DflNMjYny6A.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_04_DflLQI_H5vd.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_05_DflHrU1H-JW.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_06_DflGAkHH2Sa.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_07_DflFwUHn3Qd.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_08_DflFhr7H8NN.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_09_DflFTZVH-z_.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_10_DflD80YH2L-.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_11_DflA9f1ku0a.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_12_DfjTg_qn1Ci.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/14_13_DfjCWGzn3zG.jpg" alt="AXIS代表のThreads 投稿" loading="lazy"><figcaption>AXIS代表のThreads 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_Dfi68C1n5cL_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_Dfi68CaHz6f_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_Dfi_jaRHy-b_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_Dfi_vmLHxVM_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjAcVTH3Eu_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjAEoGHy0e_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjAzxuH9N7_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjBb4uH7bX_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjBUCjH44u_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjOHhtn-JI_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjOKG4Hxg5_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjP3H5n1fD_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjRRBbn_TD_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfjSnAAn31m_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflB9AAH9X9_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflBkuBnzXk_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflBNSnH0BG_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflBuYQn1VO_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflC9Srn8Tc_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflC9Srn8Tc_b.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfldbVfH6To_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfldbVfH6To_b.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DfldVIvn157_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflE8j4H42I_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflEf2Fn3bw_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflEIalnxYI_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflEUzKHwVj_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflEyDkn7pw_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflFc52HyQN_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflFM1Gn-0A_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflfqHMH9MX_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflJ3vuHxIy_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflJ3vuHxIy_b.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflJj_GH2_x_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflMtbCnykh_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflMtbCnykh_b.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflWgWYHwDU_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflWgWYHwDU_b.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflWN1xnxYJ_a.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.nao.official/20261112_DflWN1xnxYJ_b.jpg" alt="AXIS代表のThreads 投稿 11/12保存" loading="lazy"><figcaption>AXIS代表のThreads 投稿 11/12保存</figcaption></figure>
+</div></details>
+<details class="fold"><summary><h3>株式会社AXISのThreads・Instagram</h3><span class="n">15点</span></summary><div class="evgrid">
+<figure><img src="evidence/archive_all/threads_axis.official_prod/00_profile_20261111.jpg" alt="株式会社AXIS プロフィール 11/11保存" loading="lazy"><figcaption>株式会社AXIS プロフィール 11/11保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/02_instagram_profile_grid_bottom.jpg" alt="株式会社AXIS Instagram プロフィール" loading="lazy"><figcaption>株式会社AXIS Instagram プロフィール</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/20261112_Ddzi-BRE5mY_a.jpg" alt="株式会社AXIS 投稿 11/12保存" loading="lazy"><figcaption>株式会社AXIS 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/20261112_DfMkACMj2Gl_a.jpg" alt="株式会社AXIS 投稿 11/12保存" loading="lazy"><figcaption>株式会社AXIS 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/20261112_DfMkACMj2Gl_b.jpg" alt="株式会社AXIS 投稿 11/12保存" loading="lazy"><figcaption>株式会社AXIS 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/20261112_DfO5L8NCZlT_a.jpg" alt="株式会社AXIS 投稿 11/12保存" loading="lazy"><figcaption>株式会社AXIS 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/20261112_DfSQPwwj22S_a.jpg" alt="株式会社AXIS 投稿 11/12保存" loading="lazy"><figcaption>株式会社AXIS 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/De0XinIj6Qx_a.jpg" alt="株式会社AXIS 投稿" loading="lazy"><figcaption>株式会社AXIS 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/De8Pbbxjwp0_a.jpg" alt="株式会社AXIS 投稿" loading="lazy"><figcaption>株式会社AXIS 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/DfijTYzj_Jc_a.jpg" alt="株式会社AXIS 投稿" loading="lazy"><figcaption>株式会社AXIS 投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/DfijTYzj_Jc_b_images1-3.jpg" alt="株式会社AXIS 投稿の添付画像" loading="lazy"><figcaption>株式会社AXIS 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/DfijTYzj_Jc_c_images4-6.jpg" alt="株式会社AXIS 投稿の添付画像" loading="lazy"><figcaption>株式会社AXIS 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/DfijTYzj_Jc_d_images6-9.jpg" alt="株式会社AXIS 投稿の添付画像" loading="lazy"><figcaption>株式会社AXIS 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/DfijTYzj_Jc_e_images9-11.jpg" alt="株式会社AXIS 投稿の添付画像" loading="lazy"><figcaption>株式会社AXIS 投稿の添付画像</figcaption></figure>
+<figure><img src="evidence/archive_all/threads_axis.official_prod/reply_DfliGVvD4Vp_a.jpg" alt="株式会社AXIS 投稿" loading="lazy"><figcaption>株式会社AXIS 投稿</figcaption></figure>
+</div></details>
+<details class="fold"><summary><h3>実行委員会の公式アカウント（X・Threads・Instagram・note）</h3><span class="n">15点</span></summary><div class="evgrid">
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_DdEcC3uCaWK_a.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_DdETTbsiZkI_a.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_Ddhnu5EkpYg_a.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_DdK7lRwCVmo_a.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_DdLlOH8ib2w_a.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_DdLlOH8ib2w_b.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/20261112_threads_loca_Ddu67dBCbMy_a.jpg" alt="公式 Threads 投稿 11/12保存" loading="lazy"><figcaption>公式 Threads 投稿 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/instagram_loca.lfoodfight_profile.jpg" alt="公式 Instagram プロフィール" loading="lazy"><figcaption>公式 Instagram プロフィール</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/instagram_reel_DerBlwAPz1X.jpg" alt="公式 Instagram リール" loading="lazy"><figcaption>公式 Instagram リール</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/note_tosumedia_profile.jpg" alt="公式 note プロフィール" loading="lazy"><figcaption>公式 note プロフィール</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/threads_loca.lfoodfight_profile.jpg" alt="公式 Threads プロフィール" loading="lazy"><figcaption>公式 Threads プロフィール</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/threads_loca_Dfa5Jsjmcg9_20261107_enbu.jpg" alt="公式 Threads 11/7の投稿" loading="lazy"><figcaption>公式 Threads 11/7の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/threads_loca_Dfj01PaiZoc_20261110_owabi.jpg" alt="公式 Threads 11/10の投稿" loading="lazy"><figcaption>公式 Threads 11/10の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/threads_loca_replies_fees_20260909.jpg" alt="公式 Threads の返信欄 9/9の投稿" loading="lazy"><figcaption>公式 Threads の返信欄 9/9の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/official_lff/x_localfoodfight_profile.jpg" alt="公式 プロフィール" loading="lazy"><figcaption>公式 プロフィール</figcaption></figure>
+</div></details>
+<details class="fold"><summary><h3>TikTok・公式サイト・TOSUのサイト</h3><span class="n">10点</span></summary><div class="evgrid">
+<figure><img src="evidence/archive_all/other/20261113_tiktok_7707492291685960968_a.jpg" alt="TikTokの投稿 11/13保存" loading="lazy"><figcaption>TikTokの投稿 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/other/20261113_tiktok_7707492291685960968_b.jpg" alt="TikTokの投稿 11/13保存" loading="lazy"><figcaption>TikTokの投稿 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/other/20261113_tiktok_7707492291685960968_c.jpg" alt="TikTokの投稿 11/13保存" loading="lazy"><figcaption>TikTokの投稿 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/other/localfoodfight.jp_overview.jpg" alt="公式サイト" loading="lazy"><figcaption>公式サイト</figcaption></figure>
+<figure><img src="evidence/archive_all/other/localfoodfight.jp_top.jpg" alt="公式サイト" loading="lazy"><figcaption>公式サイト</figcaption></figure>
+<figure><img src="evidence/archive_all/other/tiktok_matsubayashiami.tosu_notfound.jpg" alt="TikTok アカウントが見つからない画面" loading="lazy"><figcaption>TikTok アカウントが見つからない画面</figcaption></figure>
+<figure><img src="evidence/archive_all/other/tiktok_sayoto2tyan_profile.jpg" alt="TikTok プロフィール" loading="lazy"><figcaption>TikTok プロフィール</figcaption></figure>
+<figure><img src="evidence/archive_all/other/tiktok_sayoto2tyan_profile_20261112.jpg" alt="TikTok プロフィール 11/12保存" loading="lazy"><figcaption>TikTok プロフィール 11/12保存</figcaption></figure>
+<figure><img src="evidence/archive_all/other/tiktok_sayoto2tyan_profile_20261113.jpg" alt="TikTok プロフィール 11/13保存" loading="lazy"><figcaption>TikTok プロフィール 11/13保存</figcaption></figure>
+<figure><img src="evidence/archive_all/other/tosu-kurayoshi.com_password.jpg" alt="TOSUのサイト（パスワード）" loading="lazy"><figcaption>TOSUのサイト（パスワード）</figcaption></figure>
+</div></details>
+<details class="fold"><summary><h3>削除の記録（Wayback Machine・チケットショップ）</h3><span class="n">7点</span></summary><div class="evgrid">
 <figure><img src="evidence/sns/deleted_20261113/base_shop_20261113_law.jpg" alt="特定商取引法に基づく表記。会社名 合同会社TOSU、事業者の名称 松林安美" loading="lazy"><figcaption>特定商取引法に基づく表記。会社名 合同会社TOSU、事業者の名称 松林安美</figcaption></figure>
 <figure><img src="evidence/sns/deleted_20261113/base_shop_20261113_top.jpg" alt="チケットショップの商品がすべて消えた（11/13）" loading="lazy"><figcaption>チケットショップの商品がすべて消えた（11/13）</figcaption></figure>
 <figure><img src="evidence/sns/deleted_20261113/lff_x_2109909971098120393_wayback.jpg" alt="公式X「かつて9.4万人超」（のちに削除）" loading="lazy"><figcaption>公式X「かつて9.4万人超」（のちに削除）</figcaption></figure>
@@ -171,8 +376,37 @@ ul.files li a::after{content:" →";opacity:.5}
 <figure><img src="evidence/sns/deleted_20261113/tosu_x_rt_0909_wayback.jpg" alt="さよと氏が合同会社TOSUのXの投稿をリポストした記録" loading="lazy"><figcaption>さよと氏が合同会社TOSUのXの投稿をリポストした記録</figcaption></figure>
 <figure><img src="evidence/sns/deleted_20261113/tosu_x_rt_1015_wayback.jpg" alt="合同会社TOSUのXの投稿を引用した記録" loading="lazy"><figcaption>合同会社TOSUのXの投稿を引用した記録</figcaption></figure>
 </div></details>
-<details class="fold" open><summary><h3>公式サイト・公的記録</h3><span class="n">1点</span></summary><div class="evgrid">
+<details class="fold"><summary><h3>公式サイト・プレスリリース・Peatix・BASE（保存版）</h3><span class="n">19点</span></summary><div class="evgrid">
 <figure><img src="evidence/official/O02_2_wayback20261008_vendor_faq.jpg" alt="公式サイト「冷蔵・冷凍庫…の手配」" loading="lazy"><figcaption>公式サイト「冷蔵・冷凍庫…の手配」</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O01_1_current_hero.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O01_2_current_開催概要_主催企画運営.jpg" alt="開催概要・主催企画運営" loading="lazy"><figcaption>開催概要・主催企画運営</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O01_3_current_FAQ.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O02_1_wayback20261008_top.jpg" alt="投稿 Wayback 10/8" loading="lazy"><figcaption>投稿 Wayback 10/8</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O02_2_wayback20261008_JS_出店FAQ_テント机椅子電気.jpg" alt="出店FAQ・テント机椅子電気 Wayback 10/8" loading="lazy"><figcaption>出店FAQ・テント机椅子電気 Wayback 10/8</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O03_1_PRTIMES_20261015.jpg" alt="10/15の投稿" loading="lazy"><figcaption>10/15の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O04_1_PRESSNOW_20261013.jpg" alt="10/13の投稿" loading="lazy"><figcaption>10/13の投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_1_TOSU_current_password.jpg" alt="パスワードで閉じられたサイト" loading="lazy"><figcaption>パスワードで閉じられたサイト</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_2_TOSU_LFF-A4flyer-960x600_wayback20261024.jpg" alt="投稿 Wayback 10/24" loading="lazy"><figcaption>投稿 Wayback 10/24</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_3_TOSU_about_wayback20260716.jpg" alt="投稿 Wayback 7/16" loading="lazy"><figcaption>投稿 Wayback 7/16</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_3a_TOSU_会社概要_資本金100万円_wayback20260716.jpg" alt="会社概要・資本金100万円 Wayback 7/16" loading="lazy"><figcaption>会社概要・資本金100万円 Wayback 7/16</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_3b_wayback_banner.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_4_TOSU_law_wayback20260716.jpg" alt="投稿 Wayback 7/16" loading="lazy"><figcaption>投稿 Wayback 7/16</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O05_5_TOSU_top_wayback20261024.jpg" alt="投稿 Wayback 10/24" loading="lazy"><figcaption>投稿 Wayback 10/24</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O06_1_Peatix_前夜祭.jpg" alt="前夜祭" loading="lazy"><figcaption>前夜祭</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O07_1_BASE_top.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O07_2_BASE_特商法.jpg" alt="特商法" loading="lazy"><figcaption>特商法</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_official/O08_1_リヴィアクス_会社概要.jpg" alt="リヴィアクス・会社概要" loading="lazy"><figcaption>リヴィアクス・会社概要</figcaption></figure>
+</div></details>
+<details class="fold"><summary><h3>法人番号・gBizINFO・県の発表など公的記録</h3><span class="n">9点</span></summary><div class="evgrid">
+<figure><img src="evidence/archive_all/evidence_records/R01_1_法人番号_TOSU.jpg" alt="法人番号" loading="lazy"><figcaption>法人番号</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R01_2_gBizINFO_TOSU.jpg" alt="投稿" loading="lazy"><figcaption>投稿</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R02_1_法人番号_リヴィアクス.jpg" alt="法人番号・リヴィアクス" loading="lazy"><figcaption>法人番号・リヴィアクス</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R02_2_gBizINFO_リヴィアクス.jpg" alt="リヴィアクス" loading="lazy"><figcaption>リヴィアクス</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R03_1_法人番号_紀の国ラボ.jpg" alt="法人番号・紀の国ラボ" loading="lazy"><figcaption>法人番号・紀の国ラボ</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R03_2_gBizINFO_紀の国ラボ.jpg" alt="紀の国ラボ" loading="lazy"><figcaption>紀の国ラボ</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R04_1_鳥取タイムズみらい_やきとり94500人.jpg" alt="鳥取タイムズみらい・やきとり94500人" loading="lazy"><figcaption>鳥取タイムズみらい・やきとり94500人</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R05_1_鳥取県_県政だより_やきとりJAPAN.jpg" alt="鳥取県・県政だより・やきとりJAPAN" loading="lazy"><figcaption>鳥取県・県政だより・やきとりJAPAN</figcaption></figure>
+<figure><img src="evidence/archive_all/evidence_records/R05_2_鳥取県_知事日誌_20250927.jpg" alt="鳥取県・知事日誌 9/27の投稿" loading="lazy"><figcaption>鳥取県・知事日誌 9/27の投稿</figcaption></figure>
 </div></details>
 </section>
 

@@ -249,5 +249,118 @@ def main() -> None:
         print(f"{out_name}  {im.size}")
 
 
+# ---------- 2026-11-13：保存した画像をすべて公開する（記録の一覧のギャラリー用） ----------
+# 閲覧者（サイトの作成者）のアカウントやつながりが写る部分は、必ず切り落とすか黒塗りにする。
+ALL_SRC = ["official_lff", "other", "threads_axis.nao.official", "threads_axis.official_prod",
+           "threads_sayoto2tyan", "x_1123sayoto", "x_ms759sk", "watch/deleted"]
+ALL_EXCLUDE = {
+    "20261112_DfnbN4dkoH3_a.jpg",          # ログイン中アカウント宛てのお知らせが重なっている
+    "20261112_0810_Dflh2eQHwIO.jpg",       # 同上
+}
+# Threads のプロフィール画面：フォロワーのアイコンが並ぶ行（元画像の座標）
+THREADS_PROFILE_BOX = {
+    "00_profile_20261111.jpg@threads_sayoto2tyan": [(395, 425, 700, 465)],      # フォロワーのアイコン
+    "x_localfoodfight_profile.jpg@official_lff": [(362, 636, 760, 666)],       # 「〇〇さんにフォローされています」
+    "00_profile_20261111.jpg@threads_axis.nao.official": [(405, 384, 705, 426)],  # 「フォロー中」（記録用アカウントのフォロー状態）
+}
+PUBLISHED_DIR = {"x_ms759sk": "sns/x_ms759sk", "threads_axis.nao.official": "sns/threads_axis",
+                 "threads_sayoto2tyan": "sns/threads_sayoto2tyan"}
+PUBLISHED = None
+
+
+def published_names():
+    global PUBLISHED
+    if PUBLISHED is None:
+        PUBLISHED = {q.name for q in (ROOT / "site" / "evidence").rglob("*") if q.is_file() and "archive_all" not in q.parts}
+    return PUBLISHED
+
+
+def platform(folder: str, name: str) -> str:
+    n = name.lower()
+    if "instagram" in n:
+        return "ig"
+    if "tiktok" in n:
+        return "tt"
+    if n.startswith("note_"):
+        return "note"
+    if folder.startswith("x_") or n.startswith("x_") or (folder == "watch/deleted" and "_2108_" in n):
+        if "photo" in n or (folder == "x_1123sayoto" and n.startswith("2026111") and (n.endswith("_b.jpg") or n.endswith("_c.jpg"))):
+            return "viewer"
+        return "x"
+    if folder.startswith("threads") or "threads" in n:
+        return "threads"
+    return "web"
+
+
+def process(im: Image.Image, kind: str, key: str) -> Image.Image:
+    w, h = im.size
+    sc = w / 1440
+    for box in THREADS_PROFILE_BOX.get(key, []):
+        im.paste((0, 0, 0), tuple(int(v * sc) for v in box))
+    if kind == "x":
+        return im.crop((int(356 * sc), 0, int(955 * sc), h))
+    if kind == "viewer":
+        # 画像ビューア：背景に透けて見える画面（左下のアカウント名など）を除き、明るい画像の部分だけ切り出す
+        top, bot = int(50 * sc), h - int(70 * sc)       # 上の閉じるボタン・下のアイコン列は判定に使わない
+        g = im.crop((0, top, w, bot)).convert("L").point(lambda v: 1 if v > 150 else 0)
+        px, gw, gh = g.load(), g.size[0], g.size[1]
+        cols = [sum(px[x, y] for y in range(0, gh, 3)) / (gh / 3) for x in range(gw)]
+        best, run = (0, 0), None
+        for x, c in enumerate(cols + [0]):
+            if c > 0.15 and run is None:
+                run = x
+            elif c <= 0.15 and run is not None:
+                if x - run > best[1] - best[0]:
+                    best = (run, x)
+                run = None
+        if best[1] - best[0] > 80:
+            x0, x1 = best
+            rows = [sum(px[x, y] for x in range(x0, x1, 3)) / ((x1 - x0) / 3) for y in range(gh)]
+            ys = [y for y, r in enumerate(rows) if r > 0.1]
+            y0, y1 = (ys[0], ys[-1]) if ys else (0, gh)
+            return im.crop((max(x0 - 4, 0), max(top + y0 - 4, 0), min(x1 + 4, w), min(top + y1 + 6, h)))
+        return im.crop((int(340 * sc), 0, int(1100 * sc), h))
+    if kind == "threads":
+        return im.crop((int(385 * sc), 0, int(1025 * sc), h))
+    if kind == "ig":
+        im.paste((0, 0, 0), (int(1110 * sc), int(590 * sc), w, h))          # 右下のメッセージ欄（相手のアイコン）
+        return im.crop((int(170 * sc), 0, w, h))                             # 左端のナビ（ログイン中のアイコン）
+    if kind == "tt":
+        return im.crop((int(240 * sc), 0, w, h))                             # 左の列（フォロー中のアカウント）
+    if kind == "note":
+        return im.crop((0, int(64 * sc), w, h))                              # 上の帯（ログイン中のアイコン）
+    return im
+
+
+def export_all() -> None:
+    base = ROOT / "site" / "evidence" / "archive_all"
+    shutil.rmtree(base, ignore_errors=True)
+    n = 0
+    for folder in ALL_SRC:
+        for p in sorted((ARCHIVE / folder).glob("*")):
+            if p.suffix.lower() not in (".jpg", ".png") or p.name in ALL_EXCLUDE:
+                continue
+            pub_dir = PUBLISHED_DIR.get(folder)
+            if (pub_dir and (ROOT / "site" / "evidence" / pub_dir / p.name).exists()) or (folder == "watch/deleted" and (p.name.startswith("20261112_2108_") or p.name.startswith("20261113_"))):
+                continue
+            kind = platform(folder, p.name)
+            im = process(Image.open(p).convert("RGB"), kind, f"{p.name}@{folder}")
+            dst = base / folder.replace("/", "_")
+            dst.mkdir(parents=True, exist_ok=True)
+            im.save(dst / (p.stem + ".jpg"), "JPEG", quality=85)
+            n += 1
+    for folder in ["official", "records"]:
+        for p in sorted((ROOT / "evidence" / folder).glob("*")):
+            if p.suffix.lower() not in (".jpg", ".png") or p.name in published_names():
+                continue
+            im = Image.open(p).convert("RGB")
+            dst = base / ("evidence_" + folder)
+            dst.mkdir(parents=True, exist_ok=True)
+            im.save(dst / (p.stem + ".jpg"), "JPEG", quality=85)
+            n += 1
+    print("archive_all", n)
+
+
 if __name__ == "__main__":
     main()
+    export_all()
