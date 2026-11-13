@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-12T23:43:24+00:00",
+  "generated_utc": "2026-11-13T02:21:07+00:00",
   "files": [
     {
       "path": "evidence/line/LI02_1103_matsubayashi_to_axis_55man.jpg",
@@ -85,6 +85,41 @@
       "path": "evidence/line/LI17b_flyer_front.jpg",
       "sha256": "d2d916d2de93d7d5827550e75c6344d7050159a2ae123a40ee64108e241d5bae",
       "bytes": 71674
+    },
+    {
+      "path": "evidence/line/LI20_axis_line_55man_account_not_opened_1004.jpg",
+      "sha256": "cc41991aa08fc609a31bd2fac3afe546ed87364eb0d011658bdeae60dead3c21",
+      "bytes": 229899
+    },
+    {
+      "path": "evidence/line/LI21_axis_estimate_consulting_fee_1070000.jpg",
+      "sha256": "4764926fda1fd8b89a59134641da0beef2288ba9d6c6422cc8e6c19eb82c8cc1",
+      "bytes": 50564
+    },
+    {
+      "path": "evidence/line/LI22a_duskin_estimate_1102_2936780yen.jpg",
+      "sha256": "41ff0e2064a847eeecf04eb682444f47dfc3fbcc0ca8d7354d99da4db72614c6",
+      "bytes": 288676
+    },
+    {
+      "path": "evidence/line/LI22e_duskin_estimate_unit_prices.jpg",
+      "sha256": "2ceeceb529aeb911f46e6d0e6a5ed41f997c61608cbc7455be0f7eb17e528100",
+      "bytes": 39325
+    },
+    {
+      "path": "evidence/line/LI23a_order_group_1104_maruchou_598400yen.jpg",
+      "sha256": "a1b6c00b2d1466477ff8f48b588f537b5bb81f0708781862c6a0e02dd9cf7b4e",
+      "bytes": 175098
+    },
+    {
+      "path": "evidence/line/LI23b_order_group_1104_tosu_transfer_598400yen.jpg",
+      "sha256": "d542c772839cc1c49df70e9b40dd0e8278493c346deaf5fe3a59743b8c7c59f9",
+      "bytes": 211480
+    },
+    {
+      "path": "evidence/line/LI24_tosu_transfer_1105_jnet_114000yen_requester_axis.jpg",
+      "sha256": "2788b8db5d4e1d353e19539587f6fe16a9fe117bb7a2c47f5d2ed42d28f5ea30",
+      "bytes": 257584
     },
     {
       "path": "evidence/official/O02_2_wayback20261008_vendor_faq.jpg",

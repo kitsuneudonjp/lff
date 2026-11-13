@@ -169,10 +169,61 @@ def export_found() -> None:
         print(f"sns/deleted_20261113/{out_name}  {im.size}")
 
 
+# 2026-11-13 に受け取った資料（evidence/line/LI20〜LI24）。
+# 黒塗り：口座番号、銀行の企業コード・受付番号・顧客番号、携帯番号、業者の担当者名・納品先の担当者名。
+# 座標は元画像のピクセル（縮小しない）。
+NEW_LINE = {
+    "LI20_": ("LI20_axis_line_55man_account_not_opened_1004.jpg", []),
+    "LI21_": ("LI21_axis_estimate_consulting_fee_1070000.jpg", []),
+    "LI22a_": ("LI22a_duskin_estimate_1102_2936780yen.jpg", [
+        (395, 498, 540, 526),     # 携帯番号
+        (615, 208, 735, 236),     # 業者の担当者名
+        (290, 582, 360, 608),     # 納品先の担当者名
+    ]),
+    "LI22e_": ("LI22e_duskin_estimate_unit_prices.jpg", []),
+    "LI23a_": ("LI23a_order_group_1104_maruchou_598400yen.jpg", [
+        (110, 245, 205, 290),     # 受取口座の番号
+        (405, 893, 462, 930),     # グループに追加された個人の表示名
+    ]),
+    "LI23b_": ("LI23b_order_group_1104_tosu_transfer_598400yen.jpg", [
+        (685, 398, 785, 428),     # 業者の担当者名
+        (425, 818, 545, 848),     # 顧客番号
+        (500, 838, 640, 866),     # 企業コード
+        (560, 965, 820, 1012),    # 受付No・企業コード
+        (560, 1040, 640, 1062),   # 受付番号
+        (680, 1095, 800, 1125),   # 出金口座の番号
+        (690, 1155, 800, 1185),   # 入金口座の番号
+    ]),
+    "LI24_": ("LI24_tosu_transfer_1105_jnet_114000yen_requester_axis.jpg", [
+        (0, 0, 1108, 30),         # 企業コード（上端）
+        (470, 285, 820, 365),     # 受付No・企業コード
+        (430, 440, 560, 480),     # 受付番号
+        (620, 495, 800, 560),     # 出金口座の番号
+        (640, 600, 760, 660),     # 入金口座の番号
+    ]),
+}
+
+
+def export_new_line() -> None:
+    sources = {p.name: p for p in SRC.glob("LI2*.jpg")}
+    for prefix, (out_name, boxes) in NEW_LINE.items():
+        match = [p for n, p in sources.items() if n.startswith(prefix)]
+        if len(match) != 1:
+            print(f"skip {prefix}: {len(match)} matches")
+            continue
+        im = Image.open(match[0]).convert("RGB")
+        for box in boxes:
+            im.paste((0, 0, 0), box)
+        im.save(DST / out_name, "JPEG", quality=90)   # メタデータは書き出さない
+        print(f"{out_name}  {im.size}")
+
+
 def main() -> None:
     export_archive()
     export_deleted()
     export_found()
+    DST.mkdir(parents=True, exist_ok=True)
+    export_new_line()
     export_flyer()
     DST.mkdir(parents=True, exist_ok=True)
     sources = {p.name: p for p in SRC.glob("*.jpg")}
